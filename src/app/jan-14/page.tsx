@@ -19,20 +19,7 @@ export default function Jan14() {
           <h1 className="text-6xl font-bold text-white bg-black/50 inline-block px-8 py-4">A LITTLE TASTE</h1>
         </div>
 
-        {/* Video Section */}
-        <div className="mb-8 flex justify-center">
-          <video
-            className="w-64 h-64 object-cover"
-            controls
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        
 
         <article className="max-w-4xl mx-auto space-y-6">
           <section className="p-8 bg-black/50 rounded-lg">
