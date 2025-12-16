@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'VisualSpam',
   description: 'Personal visual portfolio for experimental audiovisual work',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/public/favicon.ico',
   },
   openGraph: {
     title: 'VisualSpam',
