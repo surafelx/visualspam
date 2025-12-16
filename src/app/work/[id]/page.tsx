@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
+import Image from 'next/image'
 
 interface Project {
   id: string
@@ -59,31 +60,8 @@ export default function ProjectPage() {
   }
 
   return (
-    <main className="min-h-screen">
-      <div className="h-screen flex flex-col">
-        {/* Media */}
-        <div className="flex-1 relative">
-          {project.media_url ? (
-            <video
-              src={project.media_url}
-              controls
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={project.image_url}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          )}
-        </div>
-
-        {/* Info */}
-        <div className="p-8 bg-black/50 backdrop-blur">
-          <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <p className="text-lg text-white/80">{project.description}</p>
-        </div>
-      </div>
+    <main className="min-h-screen flex items-center justify-center">
+      <p className="text-white text-2xl">check again after 5 days</p>
     </main>
   )
 }

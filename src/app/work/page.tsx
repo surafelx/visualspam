@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Project {
   id: string
@@ -62,46 +63,8 @@ export default function Work() {
   }
 
   return (
-    <main className="min-h-screen pt-20">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-8 px-8">
-        <Link href="/" className="bg-gray-800 button-3d px-4 py-2 text-white font-semibold transform rotate-[-3deg] hover:rotate-0 transition-transform">
-          ← BACK
-        </Link>
-        <div className="flex items-center">
-          <div className="bg-red-500 button-3d px-6 py-2 mr-8">
-            <h1 className="text-4xl font-bold text-white">PROJECTS</h1>
-          </div>
-          <div className="flex space-x-4">
-            <button className="bg-gray-600 button-3d px-3 py-2 text-white font-semibold transform rotate-[-2deg] hover:rotate-0 transition-transform">
-              ←
-            </button>
-            <button className="bg-gray-600 button-3d px-3 py-2 text-white font-semibold transform rotate-[2deg] hover:rotate-0 transition-transform">
-              →
-            </button>
-          </div>
-        </div>
-        <div></div> {/* Spacer */}
-      </div>
-
-      {/* Projects Grid */}
-      <div className="px-8 max-h-[calc(100vh-200px)] overflow-y-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
-            <Link key={project.id} href={`/work/${project.id}`} className="group">
-              <div className={`bg-red-500 button-3d p-4 transform rotate-[${index % 2 === 0 ? 3 : -3}deg] hover:rotate-0 transition-transform`}>
-                <img
-                  src={project.image_url}
-                  alt={project.title}
-                  className="w-full h-48 object-cover mb-4"
-                />
-                <h2 className="text-white font-bold mb-2">{project.title}</h2>
-                <p className="text-red-100">{project.description}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+    <main className="min-h-screen pt-20 flex items-center justify-center">
+      <p className="text-white text-2xl">check again after 5 days</p>
     </main>
   )
 }

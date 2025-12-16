@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -6,9 +7,11 @@ export default function Home() {
 
       {/* Central Image */}
       <div className="absolute top-0 z-60" style={{ left: '50%', marginLeft: '-400px' }}>
-        <img
+        <Image
           src="https://res.cloudinary.com/dnr6jc1yr/image/upload/v1765879909/central_bczypa.png"
           alt="Central Image"
+          width={800}
+          height={800}
           className="w-[800px] h-[800px] object-contain glitch animate-float"
           style={{ minWidth: '800px', minHeight: '800px' }}
         />

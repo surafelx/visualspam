@@ -46,28 +46,8 @@ export default function NoteDetail({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen pt-20">
-      {/* Header Section */}
-      <div className="flex justify-between items-center mb-8 px-8">
-        <Link href="/notes" className="bg-gray-800 button-3d px-4 py-2 text-white font-semibold transform rotate-[-3deg] hover:rotate-0 transition-transform">
-          ← BACK
-        </Link>
-        <h1 className="text-4xl font-bold">{note.title}</h1>
-        <div></div> {/* Spacer */}
-      </div>
-
-      {/* Blog Content */}
-      <div className="px-8 max-h-[calc(100vh-200px)] overflow-y-auto">
-        <article className="max-w-4xl mx-auto bg-purple-500 button-3d p-8 transform rotate-[-1deg] hover:rotate-0 transition-transform">
-          <h2 className="text-white text-3xl font-bold mb-6">{note.title}</h2>
-          <div className="text-purple-100 whitespace-pre-wrap mb-6 leading-relaxed">
-            {note.content}
-          </div>
-          <time className="text-purple-200 text-sm block">
-            Published on {new Date(note.created_at).toLocaleDateString()}
-          </time>
-        </article>
-      </div>
+    <main className="min-h-screen pt-20 flex items-center justify-center">
+      <p className="text-white text-2xl">check again after 5 days</p>
     </main>
   )
 }
