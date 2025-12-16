@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Jan14() {
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-8 px-8">
         <Link href="/" className="bg-gray-800 button-3d px-4 py-2 text-white font-semibold transform rotate-[-3deg] hover:rotate-0 transition-transform">
@@ -42,7 +42,7 @@ export default function Jan14() {
           <section className="p-8 bg-black/50 rounded-lg">
             <h2 className="text-white text-3xl font-bold mb-4">Visuals and Audio-Reactivity</h2>
             <p className="text-white leading-relaxed mb-4">
-              At the heart of our experimental setup lies audio-reactive visuals - dynamic graphics that respond in real-time to the music's properties. Using advanced algorithms, visual elements morph, pulse, and transform based on frequency analysis, amplitude, and spectral content of the live-coded sounds.
+              At the heart of our experimental setup lies audio-reactive visuals - dynamic graphics that respond in real-time to the music&rsquo;s properties. Using advanced algorithms, visual elements morph, pulse, and transform based on frequency analysis, amplitude, and spectral content of the live-coded sounds.
             </p>
             <p className="text-white leading-relaxed">
               This creates a symbiotic relationship where the visuals not only illustrate the music but actively participate in the performance. Shapes might fractalize with bass frequencies, colors shift with melodic changes, and patterns emerge from rhythmic structures, turning the entire space into a living, breathing audiovisual organism.
@@ -55,7 +55,7 @@ export default function Jan14() {
               When live coding music converges with audio-reactive visuals, surprise DJ sets, and live vocal performances, something truly extraordinary emerges. This experimental audio-visual experience transcends traditional entertainment, becoming an immersive journey where technology and artistry intertwine.
             </p>
             <p className="text-white leading-relaxed">
-              The relevance lies in its ability to push boundaries - challenging our perceptions of music, performance, and human-machine collaboration. In an era of digital saturation, these experiences remind us of the limitless possibilities when code becomes canvas, sound becomes sculpture, and visuals become extensions of musical expression. It's not just about creating art; it's about redefining how we experience it.
+              The relevance lies in its ability to push boundaries - challenging our perceptions of music, performance, and human-machine collaboration. In an era of digital saturation, these experiences remind us of the limitless possibilities when code becomes canvas, sound becomes sculpture, and visuals become extensions of musical expression. It&rsquo;s not just about creating art; it&rsquo;s about redefining how we experience it.
             </p>
           </section>
         </article>
