@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Jan14() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative z-10">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-8 px-8">
         <Link href="/" className="bg-gray-800 button-3d px-4 py-2 text-white font-semibold transform rotate-[-3deg] hover:rotate-0 transition-transform">
@@ -19,7 +19,19 @@ export default function Jan14() {
           <h1 className="text-6xl font-bold text-white bg-black/50 inline-block px-8 py-4">A LITTLE TASTE</h1>
         </div>
 
-        
+        {/* Video Player */}
+        <div className="mb-8 text-center">
+          <div className="relative inline-block">
+            <video
+              className="w-full max-w-4xl h-64 rounded-lg shadow-2xl border-4 border-white/20 bg-black/80"
+              controls
+              src="https://res.cloudinary.com/dnr6jc1yr/video/upload/v1765882294/Untitled_design_1_ngjavh.mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+          </div>
+        </div>
 
         <article className="max-w-4xl mx-auto space-y-6">
           <section className="p-8 bg-black/50 rounded-lg">
