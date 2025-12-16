@@ -5,6 +5,25 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'VisualSpam',
   description: 'Personal visual portfolio for experimental audiovisual work',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  openGraph: {
+    title: 'VisualSpam',
+    description: 'Personal visual portfolio for experimental audiovisual work',
+    url: 'https://visualspam.com',
+    siteName: 'VisualSpam',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/dnr6jc1yr/image/upload/v1765879366/preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'VisualSpam Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({

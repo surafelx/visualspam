@@ -14,7 +14,7 @@ export default function Header() {
           <div className="flex space-x-4 mb-2">
             {/* Instagram */}
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/visualspam"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-black border border-white flex items-center justify-center"
@@ -23,7 +23,7 @@ export default function Header() {
             </a>
             {/* Telegram */}
             <a
-              href="https://telegram.org"
+              href="https://t.me/SurafelYimam"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-black border border-white flex items-center justify-center"

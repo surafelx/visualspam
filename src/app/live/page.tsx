@@ -36,8 +36,11 @@ export default function Shows() {
   ]
 
   return (
-    <main className="min-h-screen pt-20 flex items-center justify-center">
-      <p className="text-white text-2xl">check again after 5 days</p>
+    <main className="min-h-screen pt-20 flex items-center justify-center relative z-10">
+      <div className="text-center">
+        <h1 className="text-6xl font-bold text-white bg-black/50 inline-block px-8 py-4 mb-4">COMING SOON</h1>
+        <p className="text-white text-xl">Live performances section is under development</p>
+      </div>
     </main>
   )
 }

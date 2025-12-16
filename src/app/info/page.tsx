@@ -39,22 +39,18 @@ export default function Info() {
             <h2 className="text-white text-2xl font-bold mb-4">Links</h2>
             <ul className="space-y-2">
               <li>
-                <a href="https://github.com/yourusername" className="text-blue-100 hover:text-white transition-colors">
+                <a href="https://github.com/surafelx" className="text-blue-100 hover:text-white transition-colors">
                   GitHub
                 </a>
               </li>
+            
               <li>
-                <a href="https://twitter.com/yourusername" className="text-blue-100 hover:text-white transition-colors">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com/yourusername" className="text-blue-100 hover:text-white transition-colors">
+                <a href="https://instagram.com/visualspam" className="text-blue-100 hover:text-white transition-colors">
                   Instagram
                 </a>
               </li>
               <li>
-                <a href="mailto:your@email.com" className="text-blue-100 hover:text-white transition-colors">
+                <a href="mailto:workwithsurafel@email.com" className="text-blue-100 hover:text-white transition-colors">
                   Email
                 </a>
               </li>
