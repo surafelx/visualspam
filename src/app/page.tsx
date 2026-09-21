@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+// The video log is its own site. Set NEXT_PUBLIC_VIDEO_LOG_URL if it moves (for example to log.visualspam.et).
+const VIDEO_LOG_URL = process.env.NEXT_PUBLIC_VIDEO_LOG_URL || 'https://www.visualspam.et'
+
 export default function Home() {
   return (
     <main className="min-h-screen relative overflow-hidden">
@@ -62,7 +65,14 @@ export default function Home() {
         </Link>
       </div>
 
-   
+      {/* Video log, a separate site */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+        <a href={VIDEO_LOG_URL} target="_blank" rel="noopener noreferrer" className="block animate-button-float" style={{ animationDelay: '3s' }}>
+          <div className="bg-green-500 button-3d px-12 py-6 md:px-16 md:py-8 text-white font-semibold transform rotate-[-4deg] hover:rotate-0 transition-transform text-xl md:text-3xl">
+            VIDEO LOG ↗
+          </div>
+        </a>
+      </div>
     </main>
   )
 }
