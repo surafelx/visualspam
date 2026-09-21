@@ -66,9 +66,9 @@ export default function Home() {
       </div>
 
       {/* Video log, a separate site */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-10">
         <a href={VIDEO_LOG_URL} target="_blank" rel="noopener noreferrer" className="block animate-button-float" style={{ animationDelay: '3s' }}>
-          <div className="bg-green-500 button-3d px-12 py-6 md:px-16 md:py-8 text-white font-semibold transform rotate-[-4deg] hover:rotate-0 transition-transform text-xl md:text-3xl">
+          <div className="bg-black button-3d px-10 py-5 md:px-14 md:py-6 text-white font-semibold transform rotate-[-4deg] hover:rotate-0 transition-transform text-xl md:text-3xl border-4 border-white whitespace-nowrap">
             VIDEO LOG ↗
           </div>
         </a>
