@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.battenandridge.com.au/sitemap.xml
+Sitemap: https://www.battenandridge.nyc/sitemap.xml
