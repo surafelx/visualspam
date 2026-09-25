@@ -1,340 +1,736 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Batten &amp; Ridge Roofing</title>
-<meta name="description" content="Roof repairs, re-roofing, restorations and gutters across Sydney's north and west.">
+<meta name="description" content="Licensed Sydney roofers for leaks, roof repairs, re-roofing, tile restorations and gutters. Free inspection, a fixed written quote in 48 hours and a 10-year workmanship warranty.">
+<link rel="canonical" href="https://www.battenandridge.com.au/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1B1C1E">
+<meta name="geo.region" content="AU-NSW">
+<meta name="geo.placename" content="Sydney">
+<meta name="geo.position" content="-33.7317;151.0036">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_AU">
+<meta property="og:site_name" content="Batten &amp; Ridge Roofing">
+<meta property="og:title" content="Roof Repairs &amp; Re-Roofing in Sydney | Batten &amp; Ridge Roofing">
+<meta property="og:description" content="Leaks fixed, roofs replaced and tiles restored by a licensed local crew. Free inspection and a fixed written quote within 48 hours.">
+<meta property="og:url" content="https://www.battenandridge.com.au/">
+<meta property="og:image" content="https://unsplash.com/photos/IfXxkrdq9z4/download?w=1200">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="vendor/leaflet.css">
+
+<!-- SEO: local business details for Google. Replace every placeholder before launch. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "@id": "https://www.battenandridge.com.au/#business",
+  "name": "Batten & Ridge Roofing",
+  "url": "https://www.battenandridge.com.au/",
+  "telephone": "+61 1300 000 000",
+  "email": "hello@battenandridge.com.au",
+  "image": "https://unsplash.com/photos/IfXxkrdq9z4/download?w=1200",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 4, 12 Example Street",
+    "addressLocality": "Castle Hill",
+    "addressRegion": "NSW",
+    "postalCode": "2154",
+    "addressCountry": "AU"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -33.7317, "longitude": 151.0036 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Castle Hill" }, { "@type": "City", "name": "Baulkham Hills" },
+    { "@type": "City", "name": "Kellyville" }, { "@type": "City", "name": "Hornsby" },
+    { "@type": "City", "name": "Epping" }, { "@type": "City", "name": "Ryde" },
+    { "@type": "City", "name": "Chatswood" }, { "@type": "City", "name": "Lane Cove" },
+    { "@type": "City", "name": "Dee Why" }, { "@type": "City", "name": "Mona Vale" },
+    { "@type": "City", "name": "Parramatta" }, { "@type": "City", "name": "Marrickville" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof leak detection and repairs" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Re-roofing with steel sheeting" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tile roof restoration" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutter and downpipe replacement" } }
+    ]
+  },
+  "sameAs": ["https://www.facebook.com/YOUR_PAGE", "https://www.instagram.com/YOUR_HANDLE"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much does a roof repair cost in Sydney?", "acceptedAnswer": { "@type": "Answer", "text": "Most leak repairs we do cost between $350 and $1,200, depending on access and what has failed. You get a fixed written price before any work starts." } },
+    { "@type": "Question", "name": "Do you charge for roof inspections?", "acceptedAnswer": { "@type": "Answer", "text": "No. Inspections and quotes are free across our service area, and you get photos of everything we find." } },
+    { "@type": "Question", "name": "Should I restore or replace my tile roof?", "acceptedAnswer": { "@type": "Answer", "text": "If the tiles and battens are sound, a restoration costs far less and adds 15 or more years. If battens are rotten or many tiles are porous, re-roofing in steel is usually better value." } },
+    { "@type": "Question", "name": "Can you come out for an emergency leak?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Call us and we will make the roof watertight the same day where it is safe to go up, then quote the permanent fix." } },
+    { "@type": "Question", "name": "Are you licensed and insured?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We hold a NSW contractor licence for roofing and carry public liability and workers compensation insurance. Certificates are available on request." } },
+    { "@type": "Question", "name": "What warranty do you give?", "acceptedAnswer": { "@type": "Answer", "text": "Every job carries our 10-year workmanship warranty, plus the manufacturer's warranty on materials." } }
+  ]
+}
+</script>
+
 <style>
 :root {
-  --ground: #EEECE4;
-  --surface: #F7F6F1;
-  --ink: #26272A;
-  --muted: #5B5D57;
-  --line: #D6D3C7;
-  --accent: #E6A417;
-  --accent-ink: #1E1A10;
-  --band: #2E2F31;
-  --band-ink: #EEECE4;
-  --roof: #323233;
-  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
-  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --paper: #F4F3EE;
+  --card: #FFFFFF;
+  --ink: #1B1C1E;
+  --muted: #5F615C;
+  --line: #E1DFD6;
+  --soft: #EAE8E0;
+  --night: #16171A;
+  --night-2: #202226;
+  --night-ink: #F1EFE8;
+  --night-muted: #A9AAA4;
+  --accent: #F2B01E;
+  --accent-hover: #FFC23D;
+  --accent-ink: #1A1508;
+  --ok: #2E9A5A;
+  --star: #F2A60C;
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(20,20,15,.06), 0 8px 24px -8px rgba(20,20,15,.14);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #1C1D1F; --surface: #242528; --ink: #ECEAE2; --muted: #A9AAA3;
-    --line: #3A3B3E; --band: #111213; --band-ink: #ECEAE2; color-scheme: dark;
+    --paper: #141517; --card: #1D1F22; --ink: #EFEDE6; --muted: #A4A59F;
+    --line: #2D2F33; --soft: #25272B; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -8px rgba(0,0,0,.6);
+    color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --ground: #1C1D1F; --surface: #242528; --ink: #ECEAE2; --muted: #A9AAA3;
-  --line: #3A3B3E; --band: #111213; --band-ink: #ECEAE2; color-scheme: dark;
+  --paper: #141517; --card: #1D1F22; --ink: #EFEDE6; --muted: #A4A59F;
+  --line: #2D2F33; --soft: #25272B; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -8px rgba(0,0,0,.6);
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-body {
-  margin: 0; background: var(--ground); color: var(--ink);
-  font: 400 17px/1.6 var(--body);
-}
-img, svg { max-width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before { transition: none !important; animation: none !important; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-.wrap { max-width: 1120px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
-h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: 0.005em; }
-h1 { font-size: clamp(46px, 7.4vw, 88px); text-transform: uppercase; }
-h2 { font-size: clamp(34px, 4.6vw, 52px); text-transform: uppercase; }
-h3 { font-size: 26px; text-transform: uppercase; }
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1; margin: 0; text-wrap: balance; text-transform: uppercase; letter-spacing: .005em; }
+h1 { font-size: clamp(44px, 6vw, 80px); font-weight: 800; }
+h2 { font-size: clamp(38px, 4.8vw, 60px); }
+h3 { font-size: 26px; }
 p { margin: 0; }
-.label { font: 600 13px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.eyebrow { font: 700 13px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 22px; height: 3px; background: var(--accent); }
 
 .btn {
-  display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px;
-  border-radius: 3px; border: 2px solid var(--ink); background: transparent; color: var(--ink);
-  font: 600 16px/1 var(--body); text-decoration: none; cursor: pointer;
-  transition: background .15s, color .15s, transform .15s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px;
+  border-radius: 6px; border: 2px solid currentColor; background: transparent; color: inherit;
+  font: 700 16px/1 var(--body); text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background .15s, color .15s, transform .15s, border-color .15s;
 }
 .btn:hover { transform: translateY(-1px); }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-.btn.primary:hover { background: #F0B530; }
+.btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+
+.stars { display: inline-flex; gap: 2px; color: var(--star); }
+.stars svg { width: 16px; height: 16px; }
+
+/* Photos: every photo sits in a .ph frame that shows a styled stand-in if the image can't load */
+.ph { position: relative; overflow: hidden; background: #2A2C30; isolation: isolate; }
+.ph img { width: 100%; height: 100%; object-fit: cover; }
+.ph.fallback { background:
+  repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 2px, transparent 2px 14px, rgba(0,0,0,.18) 14px 15px, transparent 15px 22px),
+  linear-gradient(160deg, var(--tone, #4A4C50), #1E1F22); }
+.ph.fallback::after {
+  content: attr(data-label); position: absolute; left: 14px; bottom: 12px; right: 14px;
+  font: 600 12px/1.3 var(--body); letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7);
+}
+
+/* Top notice */
+.notice { background: var(--accent); color: var(--accent-ink); font-size: 14px; font-weight: 600; text-align: center; padding: 8px 16px; }
 
 /* Header */
-header.top {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
-  background: color-mix(in srgb, var(--ground) 92%, transparent);
-  backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
-}
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; }
-.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand b { font: 700 24px/1 var(--display); text-transform: uppercase; letter-spacing: 0.02em; }
-.brand svg { width: 34px; height: 24px; }
-.top nav { display: flex; align-items: center; gap: 28px; }
-.top nav a:not(.btn) { text-decoration: none; font-weight: 500; color: var(--muted); }
-.top nav a:not(.btn):hover { color: var(--ink); }
-.top .btn { min-height: 44px; padding: 0 18px; font-size: 15px; }
-@media (max-width: 760px) { .top nav a:not(.btn) { display: none; } }
-@media (max-width: 420px) { .brand b { font-size: 20px; white-space: nowrap; } .brand svg { width: 26px; } }
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 1000; background: var(--night); color: var(--night-ink); border-bottom: 1px solid rgba(255,255,255,.08); }
+.site-head .wrap { display: flex; align-items: center; gap: 28px; min-height: 72px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+.brand svg { width: 38px; height: 28px; flex: none; }
+.brand b { font: 800 26px/1 var(--display); text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
+.brand small { display: block; font: 600 11px/1 var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--night-muted); margin-top: 4px; }
+.site-head nav { display: flex; gap: 26px; }
+.site-head nav a { text-decoration: none; font-weight: 600; font-size: 15px; color: var(--night-muted); }
+.site-head nav a:hover { color: var(--night-ink); }
+.head-call { display: grid; text-align: right; text-decoration: none; line-height: 1.1; }
+.head-call span { font-size: 12px; color: var(--night-muted); font-weight: 600; }
+.head-call strong { font: 700 24px/1 var(--display); letter-spacing: .03em; color: var(--accent); }
+.site-head .btn { min-height: 44px; padding: 0 18px; font-size: 15px; }
+@media (max-width: 1020px) { .site-head nav { display: none; } }
+@media (max-width: 640px) { .head-call, .site-head .btn { display: none; } .brand b { font-size: 22px; } }
 
 /* Hero */
-.hero { padding-block: clamp(48px, 8vw, 96px) clamp(40px, 6vw, 72px); }
-.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.hero h1 span { color: var(--accent); }
-.hero .lede { font-size: 19px; color: var(--muted); max-width: 34ch; margin-top: 24px; }
-.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-.phone { font: 700 22px/1 var(--display); letter-spacing: 0.03em; }
-.facts { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
-.facts div { display: grid; gap: 4px; }
-.facts strong { font: 700 28px/1 var(--display); font-variant-numeric: tabular-nums; }
-.facts span { font-size: 14px; color: var(--muted); }
+.hero { position: relative; background: var(--night); color: var(--night-ink); overflow: hidden; }
+.hero-photo { position: absolute; inset: 0; --tone: #5A4A3E; }
+.hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(22,23,26,.96) 0%, rgba(22,23,26,.86) 38%, rgba(22,23,26,.35) 75%, rgba(22,23,26,.2) 100%),
+              linear-gradient(0deg, rgba(22,23,26,.7), transparent 40%); }
+.hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 72px); align-items: center; padding-block: clamp(56px, 8vw, 104px); }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lede { font-size: 19px; color: #D2D0C8; max-width: 38ch; margin-top: 22px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.hero-cta .btn:not(.primary) { color: var(--night-ink); border-color: rgba(255,255,255,.35); }
+.hero-rating { display: flex; align-items: center; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+.g-badge { display: inline-flex; align-items: center; gap: 12px; padding: 10px 16px 10px 12px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); text-decoration: none; }
+.g-badge .g { width: 28px; height: 28px; border-radius: 50%; background: #fff; color: #1B1C1E; display: grid; place-items: center; font: 800 16px/1 var(--body); }
+.g-badge b { font-size: 18px; }
+.g-badge span { font-size: 14px; color: var(--night-muted); }
+.hero-rating .small { font-size: 14px; color: var(--night-muted); }
 
-.house { display: grid; gap: 18px; }
-.house svg { width: 100%; height: auto; display: block; }
-.roof-fill { fill: var(--roof); transition: fill .35s; }
-.swatches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.swatches .label { margin-right: 6px; }
-.sw {
-  width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--line); cursor: pointer; padding: 0;
-  background: var(--c);
+/* Quick quote card */
+.quick { background: var(--card); color: var(--ink); border-radius: 14px; padding: clamp(22px, 3vw, 32px); box-shadow: 0 30px 60px -20px rgba(0,0,0,.55); display: grid; gap: 14px; }
+.quick h2 { font-size: 32px; }
+.quick > p { color: var(--muted); font-size: 15px; margin-top: -4px; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 13px; font-weight: 700; letter-spacing: .02em; }
+input, select, textarea {
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; width: 100%;
 }
-.sw[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--ground), 0 0 0 4px var(--accent); }
-.sw-name { font-size: 14px; color: var(--muted); min-width: 9ch; }
-@media (max-width: 860px) {
-  .hero .wrap { grid-template-columns: 1fr; }
-  .house { order: -1; max-width: 520px; }
-}
+textarea { min-height: 120px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.quick .btn { width: 100%; }
+.fine { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.fine svg { width: 16px; height: 16px; color: var(--ok); flex: none; }
+.form-msg { font-size: 14px; font-weight: 600; padding: 12px 14px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 22%, var(--card)); }
+@media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+/* Trust bar */
+.trust { background: var(--night-2); color: var(--night-ink); }
+.trust ul { list-style: none; margin: 0; padding-block: 22px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.trust li { display: flex; align-items: center; gap: 14px; font-size: 15px; line-height: 1.3; }
+.trust li svg { width: 30px; height: 30px; color: var(--accent); flex: none; }
+.trust strong { display: block; font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+.trust span { color: var(--night-muted); font-size: 14px; }
+@media (max-width: 900px) { .trust ul { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .trust ul { grid-template-columns: 1fr; } }
 
 /* Sections */
-section.block { padding-block: clamp(64px, 9vw, 112px); }
-.head { display: grid; gap: 14px; max-width: 620px; margin-bottom: 48px; }
-.head p { color: var(--muted); }
+.section { padding-block: clamp(72px, 9vw, 120px); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px 48px; margin-bottom: clamp(36px, 5vw, 56px); }
+.sec-head > div { display: grid; gap: 16px; max-width: 640px; }
+.sec-head p { color: var(--muted); font-size: 18px; }
 
-.services { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 2px solid var(--ink); }
-.svc { padding: 32px 32px 36px 0; border-bottom: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
-.svc:nth-child(even) { padding: 32px 0 36px 32px; border-left: 1px solid var(--line); }
-.svc p { color: var(--muted); max-width: 44ch; }
-.svc .meta { font-size: 14px; font-weight: 600; color: var(--ink); }
-@media (max-width: 700px) {
-  .services { grid-template-columns: 1fr; }
-  .svc, .svc:nth-child(even) { padding: 28px 0; border-left: 0; }
+/* Services */
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.svc { background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; text-decoration: none; transition: transform .2s; }
+.svc:hover { transform: translateY(-4px); }
+.svc .ph { aspect-ratio: 4 / 3; }
+.svc .ph img { transition: transform .5s; }
+.svc:hover .ph img { transform: scale(1.05); }
+.svc-body { padding: 22px 22px 24px; display: grid; gap: 10px; flex: 1; align-content: start; }
+.svc-body p { color: var(--muted); font-size: 15px; }
+.svc-meta { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 14px; font-weight: 700; display: flex; justify-content: space-between; gap: 8px; }
+.svc-meta span:last-child { color: var(--muted); font-weight: 600; }
+@media (max-width: 1020px) { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+/* Check-ins */
+.checkins-sec { background: var(--soft); }
+.live-dot { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--ok); }
+.live-dot::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 rgba(46,154,90,.5); animation: pulse 2s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(46,154,90,0); } 100% { box-shadow: 0 0 0 0 rgba(46,154,90,0); } }
+.checkins { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.map-card { position: sticky; top: 96px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
+#map { height: 560px; width: 100%; background: #DCDAD2; }
+#map.no-tiles { background:
+  linear-gradient(rgba(27,28,30,.07) 1px, transparent 1px) 0 0 / 40px 40px,
+  linear-gradient(90deg, rgba(27,28,30,.07) 1px, transparent 1px) 0 0 / 40px 40px,
+  radial-gradient(ellipse at 85% 50%, #BFD3DD 0 18%, transparent 19%),
+  #E6E3DA; }
+.map-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 14px 18px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+.map-foot b { color: var(--ink); }
+.pin { width: 30px; height: 30px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--ink); border: 3px solid var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,.35); transition: transform .2s, background .2s; }
+.pin.hot { background: var(--accent); transform: rotate(-45deg) scale(1.25); }
+.pin-label { font: 700 12px/1 var(--body); background: var(--card); color: var(--ink); padding: 5px 8px; border-radius: 4px; white-space: nowrap; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+.leaflet-container { font-family: var(--body); }
+.leaflet-popup-content-wrapper { border-radius: 8px; }
+.leaflet-popup-content { margin: 12px 14px; font-size: 14px; line-height: 1.4; }
+
+.feed { display: grid; gap: 14px; max-height: 614px; overflow-y: auto; padding-right: 6px; scrollbar-width: thin; }
+.ci { background: var(--card); border-radius: var(--radius); padding: 18px; display: grid; grid-template-columns: 1fr 104px; gap: 14px 16px; border: 2px solid transparent; transition: border-color .2s; cursor: pointer; }
+.ci:hover, .ci.hot { border-color: var(--accent); }
+.ci-top { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font: 700 15px/1 var(--body); flex: none; }
+.ci-who { font-size: 14px; line-height: 1.35; }
+.ci-who b { display: block; font-size: 15px; }
+.ci-who span { color: var(--muted); }
+.ci-top time { margin-left: auto; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.ci p { font-size: 15px; color: var(--muted); }
+.ci .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--soft); padding: 4px 8px; border-radius: 4px; margin-bottom: 8px; color: var(--ink); }
+.ci .ph { border-radius: 6px; aspect-ratio: 1; align-self: start; }
+.ci .ph.fallback::after { font-size: 10px; left: 8px; bottom: 6px; }
+@media (max-width: 900px) {
+  .checkins { grid-template-columns: 1fr; }
+  .map-card { position: static; }
+  #map { height: 380px; }
+  .feed { max-height: none; overflow: visible; padding-right: 0; }
 }
+@media (max-width: 460px) { .ci { grid-template-columns: 1fr 80px; } }
+
+/* Reviews */
+.reviews { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+.score { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px; display: grid; gap: 14px; }
+.score-big { display: flex; align-items: center; gap: 16px; }
+.score-big strong { font: 800 76px/0.9 var(--display); font-variant-numeric: tabular-nums; }
+.score-big .stars svg { width: 22px; height: 22px; }
+.score-big small { display: block; font-size: 14px; color: var(--muted); margin-top: 6px; }
+.bars { display: grid; gap: 6px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.bar { display: grid; grid-template-columns: 14px 1fr 36px; gap: 10px; align-items: center; color: var(--muted); }
+.bar i { height: 8px; border-radius: 4px; background: var(--soft); overflow: hidden; }
+.bar i::before { content: ""; display: block; height: 100%; width: var(--w); background: var(--star); }
+.score .btn { width: 100%; }
+.score .source { font-size: 13px; color: var(--muted); text-align: center; }
+.rev-grid { columns: 2 300px; column-gap: 20px; }
+.rev { break-inside: avoid; background: var(--card); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; display: grid; gap: 14px; border: 1px solid var(--line); }
+.rev-top { display: flex; align-items: center; gap: 12px; }
+.rev-top .avatar { background: var(--tone, #3C5A78); color: #fff; }
+.rev-top b { display: block; font-size: 15px; }
+.rev-top span { font-size: 13px; color: var(--muted); }
+.rev-top .gmark { margin-left: auto; font: 800 13px/1 var(--body); color: var(--muted); border: 1px solid var(--line); border-radius: 50%; width: 26px; height: 26px; display: grid; place-items: center; }
+.rev blockquote { margin: 0; font-size: 16px; }
+.rev .job { font-size: 13px; color: var(--muted); font-weight: 600; }
+@media (max-width: 860px) { .reviews { grid-template-columns: 1fr; } }
 
 /* Process band */
-.band { background: var(--band); color: var(--band-ink); }
-.band .label, .band .head p { color: color-mix(in srgb, var(--band-ink) 65%, transparent); }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
-.steps li { counter-increment: s; display: grid; gap: 12px; align-content: start; }
-.steps li::before {
-  content: "Step " counter(s); font: 600 13px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--accent); padding-bottom: 14px; border-bottom: 1px solid color-mix(in srgb, var(--band-ink) 25%, transparent);
-}
-.steps p { color: color-mix(in srgb, var(--band-ink) 72%, transparent); }
-@media (max-width: 760px) { .steps { grid-template-columns: 1fr; gap: 32px; } }
+.band { background: var(--night); color: var(--night-ink); position: relative; overflow: hidden; }
+.band .eyebrow, .band .sec-head p { color: var(--night-muted); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: step; }
+.steps li { counter-increment: step; background: var(--night-2); border-radius: var(--radius); padding: 30px 28px 32px; display: grid; gap: 12px; align-content: start; border-top: 4px solid var(--accent); }
+.steps li::before { content: "Step " counter(step); font: 700 13px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.steps p { color: var(--night-muted); }
+.band-photo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; margin-top: 20px; }
+.band-photo .ph { border-radius: var(--radius); aspect-ratio: 16 / 9; --tone: #6B4A38; }
+.band-photo .ph:last-child { --tone: #4E5358; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr; } .band-photo { grid-template-columns: 1fr; } }
 
-.quote-mark { display: grid; gap: 20px; max-width: 760px; margin: 72px 0 0; padding-top: 48px; border-top: 1px solid color-mix(in srgb, var(--band-ink) 25%, transparent); }
-.quote-mark blockquote { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.2 var(--display); text-wrap: balance; }
-.quote-mark cite { font-style: normal; color: color-mix(in srgb, var(--band-ink) 65%, transparent); font-size: 15px; }
+/* FAQ */
+.faq-wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+.faq { display: grid; gap: 12px; }
+.faq details { background: var(--card); border-radius: var(--radius); border: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 20px 56px 20px 22px; font-weight: 700; font-size: 17px; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: var(--soft); display: grid; place-items: center; font-size: 20px; font-weight: 500; transition: transform .2s; }
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); background: var(--accent); color: var(--accent-ink); }
+.faq details p { padding: 0 22px 22px; color: var(--muted); }
+@media (max-width: 860px) { .faq-wrap { grid-template-columns: 1fr; } }
 
-/* Quote form */
-.contact .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
-.contact .aside { display: grid; gap: 28px; }
-.contact dl { margin: 0; display: grid; gap: 20px; }
-.contact dt { margin-bottom: 6px; }
-.contact dd { margin: 0; }
-form { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: clamp(24px, 4vw, 40px); display: grid; gap: 18px; }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+/* Contact */
+.contact { background: var(--soft); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+.contact-list { display: grid; gap: 22px; margin-top: 32px; }
+.contact-list div { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+.contact-list .ic { width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--accent); display: grid; place-items: center; }
+.contact-list .ic svg { width: 20px; height: 20px; }
+.contact-list b { display: block; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.contact-list .big { font: 700 28px/1.1 var(--display); letter-spacing: .02em; }
+.copy { font: 600 13px/1 var(--body); border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 4px; padding: 6px 10px; cursor: pointer; margin-left: 10px; vertical-align: middle; }
+.form-card { background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: clamp(24px, 4vw, 40px); display: grid; gap: 16px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
-.field { display: grid; gap: 8px; }
-.field label { font-size: 14px; font-weight: 600; }
-input, select, textarea {
-  font: inherit; font-size: 16px; color: var(--ink); background: var(--ground);
-  border: 1px solid var(--line); border-radius: 3px; padding: 12px 14px; width: 100%;
-}
-textarea { min-height: 110px; resize: vertical; }
-input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
-.form-note { font-size: 14px; color: var(--muted); }
-.sent { padding: 14px 16px; border-radius: 3px; background: color-mix(in srgb, var(--accent) 22%, var(--surface)); font-weight: 500; }
-@media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } }
+.contact .form-card .btn { justify-self: start; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
 
-footer { border-top: 1px solid var(--line); padding-block: 32px; font-size: 14px; color: var(--muted); }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+/* Footer */
+footer { background: var(--night); color: var(--night-muted); font-size: 15px; padding-block: 64px 32px; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1.6fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); }
+footer h3 { font-size: 18px; color: var(--night-ink); margin-bottom: 14px; letter-spacing: .06em; }
+footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--night-ink); }
+.suburbs { columns: 2; column-gap: 24px; }
+.suburbs li { margin-bottom: 8px; }
+.foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-top: 24px; font-size: 13px; }
+footer .brand { margin-bottom: 16px; color: var(--night-ink); }
+@media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr; } }
+
+/* Mobile action bar */
+.mobile-bar { display: none; }
+@media (max-width: 640px) {
+  .mobile-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1001; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); background: var(--night); border-top: 1px solid rgba(255,255,255,.1); }
+  .mobile-bar .btn { min-height: 48px; padding: 0 12px; }
+  .mobile-bar .btn:not(.primary) { color: var(--night-ink); border-color: rgba(255,255,255,.3); }
+  footer { padding-bottom: 100px; }
+}
 </style>
 </head>
 <body>
 
-<header class="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 5.9L10 14.8l-5.4 2.9 1.2-5.9L1.4 7.7l6-.7z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-crew" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-roof" viewBox="0 0 38 28"><path d="M2 24 L19 5 L36 24" fill="none" stroke="#F2B01E" stroke-width="4.5"/><path d="M10 24 L19 14 L28 24" fill="none" stroke="currentColor" stroke-width="3" opacity=".55"/></symbol>
+</svg>
+
+<div class="notice" role="note">Demo site. The business, reviews and job check-ins are samples to show the layout.</div>
+
+<header class="site-head">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Batten and Ridge Roofing, home">
-      <svg viewBox="0 0 34 24" aria-hidden="true"><path d="M2 20 L17 4 L32 20" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linejoin="miter"/></svg>
-      <b>Batten &amp; Ridge</b>
+      <svg><use href="#i-roof"/></svg>
+      <span><b>Batten &amp; Ridge</b><small>Roofing &middot; Sydney</small></span>
     </a>
     <nav aria-label="Main">
       <a href="#services">Services</a>
-      <a href="#process">How it works</a>
-      <a href="#quote" class="btn primary">Free quote</a>
+      <a href="#recent-jobs">Recent jobs</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
     </nav>
+    <a class="head-call" href="tel:1300000000"><span>Call a roofer</span><strong>1300 000 000</strong></a>
+    <a class="btn primary" href="#quote">Free quote</a>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-photo ph" data-label="Photo: finished steel re-roof">
+      <img src="https://unsplash.com/photos/IfXxkrdq9z4/download?w=2000" alt="Brick house with a new metal roof" fetchpriority="high" width="2000" height="1333">
+    </div>
     <div class="wrap">
       <div>
-        <p class="label">Sydney roofers &middot; North Shore to the Hills</p>
-        <h1 style="margin-top:18px">Roofs fixed properly. <span>First time.</span></h1>
-        <p class="lede">Leaks, re-roofs, restorations and gutters. A licensed roofer inspects, you get a written quote, and the job is done by our own crew.</p>
-        <div class="actions">
-          <a href="#quote" class="btn primary">Book a free inspection</a>
-          <a href="#services" class="btn">See services</a>
+        <span class="eyebrow" style="color:var(--night-muted)">Licensed Sydney roofers since 2009</span>
+        <h1 id="hero-title" style="margin-top:20px">Roof repairs &amp; re-roofing, <em>done right the first time</em></h1>
+        <p class="lede">Leaks traced to the source, tiles restored and old roofs replaced across Sydney's north and west. Free inspection, a fixed written quote in 48 hours, and our own crew on the job.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#quote">Book a free inspection</a>
+          <a class="btn" href="tel:1300000000"><svg><use href="#i-phone"/></svg>1300 000 000</a>
         </div>
-        <div class="facts">
-          <div><strong>10 yrs</strong><span>workmanship warranty</span></div>
-          <div><strong>48 hrs</strong><span>to a written quote</span></div>
-          <div><strong>4.9 / 5</strong><span>from 310 reviews</span></div>
+        <div class="hero-rating">
+          <a class="g-badge" href="#reviews">
+            <span class="g" aria-hidden="true">G</span>
+            <span><b style="color:var(--night-ink)">4.9</b> <span class="stars" aria-label="4.9 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span></span>
+            <span>312 Google reviews</span>
+          </a>
+          <span class="small">68 jobs checked in near you this year</span>
         </div>
       </div>
 
-      <div class="house">
-        <svg viewBox="0 0 520 340" role="img" aria-label="A house with a corrugated steel roof in the selected colour">
-          <defs>
-            <clipPath id="roofClip"><path d="M40 170 L260 40 L480 170 Z"/></clipPath>
-            <pattern id="ribs" width="16" height="10" patternUnits="userSpaceOnUse" patternTransform="skewX(0)">
-              <rect width="16" height="10" fill="#000" opacity="0"/>
-              <rect x="0" width="2" height="10" fill="#fff" opacity=".16"/>
-              <rect x="8" width="1" height="10" fill="#000" opacity=".18"/>
-            </pattern>
-          </defs>
-          <!-- walls -->
-          <rect x="78" y="168" width="364" height="150" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
-          <rect x="230" y="222" width="60" height="96" fill="var(--line)"/>
-          <rect x="116" y="206" width="76" height="56" fill="var(--ground)" stroke="var(--line)" stroke-width="2"/>
-          <rect x="328" y="206" width="76" height="56" fill="var(--ground)" stroke="var(--line)" stroke-width="2"/>
-          <!-- roof -->
-          <g clip-path="url(#roofClip)">
-            <rect class="roof-fill" x="0" y="0" width="520" height="200"/>
-            <rect x="0" y="0" width="520" height="200" fill="url(#ribs)"/>
-          </g>
-          <!-- gutter & ridge -->
-          <rect class="roof-fill" x="30" y="166" width="460" height="10" rx="2"/>
-          <rect x="30" y="166" width="460" height="10" rx="2" fill="#000" opacity=".25"/>
-          <path d="M252 44 L260 38 L268 44" fill="none" stroke="var(--accent)" stroke-width="5"/>
-          <line x1="20" y1="318" x2="500" y2="318" stroke="var(--ink)" stroke-width="2"/>
-        </svg>
-        <div class="swatches" role="group" aria-label="Preview a steel roof colour">
-          <span class="label">Try a colour</span>
-          <button class="sw" style="--c:#323233" data-name="Monument" aria-pressed="true" aria-label="Monument"></button>
-          <button class="sw" style="--c:#4D4F48" data-name="Woodland Grey" aria-pressed="false" aria-label="Woodland Grey"></button>
-          <button class="sw" style="--c:#6D6C6E" data-name="Basalt" aria-pressed="false" aria-label="Basalt"></button>
-          <button class="sw" style="--c:#BDBFBA" data-name="Shale Grey" aria-pressed="false" aria-label="Shale Grey"></button>
-          <button class="sw" style="--c:#E4E2D5" data-name="Surfmist" aria-pressed="false" aria-label="Surfmist"></button>
-          <button class="sw" style="--c:#364152" data-name="Deep Ocean" aria-pressed="false" aria-label="Deep Ocean"></button>
-          <button class="sw" style="--c:#5E1D0E" data-name="Manor Red" aria-pressed="false" aria-label="Manor Red"></button>
-          <span class="sw-name" id="swName" aria-live="polite">Monument</span>
+      <form class="quick" id="quickForm" novalidate aria-labelledby="quick-title">
+        <h2 id="quick-title">Get a free quote</h2>
+        <p>Tell us where and what. A roofer calls you back today.</p>
+        <div class="field">
+          <label for="q-suburb">Suburb</label>
+          <input id="q-suburb" name="suburb" autocomplete="address-level2" placeholder="e.g. Castle Hill" required>
         </div>
-      </div>
+        <div class="field">
+          <label for="q-service">What do you need?</label>
+          <select id="q-service" name="service">
+            <option>Leak or roof repair</option>
+            <option>Re-roof</option>
+            <option>Tile restoration</option>
+            <option>Gutters &amp; downpipes</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="q-phone">Phone</label>
+          <input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="04xx xxx xxx" required>
+        </div>
+        <button class="btn primary" type="submit">Request my callback</button>
+        <p class="fine"><svg><use href="#i-check"/></svg>No obligation. We never share your number.</p>
+      </form>
     </div>
   </section>
 
-  <section class="block" id="services" style="padding-top:clamp(32px,5vw,64px)">
+  <section class="trust" aria-label="Why homeowners choose us">
     <div class="wrap">
-      <div class="head">
-        <p class="label">Services</p>
-        <h2>Four things, done well</h2>
-        <p>We keep the list short on purpose. If your roof needs something else, ask and we'll tell you straight whether we're the right people.</p>
+      <ul>
+        <li><svg><use href="#i-shield"/></svg><div><strong>Licensed &amp; insured</strong><span>NSW Lic. 000000C, $20M public liability</span></div></li>
+        <li><svg><use href="#i-check"/></svg><div><strong>10-year warranty</strong><span>on all workmanship, in writing</span></div></li>
+        <li><svg><use href="#i-clock"/></svg><div><strong>Quote in 48 hrs</strong><span>fixed price, itemised, with photos</span></div></li>
+        <li><svg><use href="#i-crew"/></svg><div><strong>Our own crew</strong><span>no subcontractors on your roof</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">What we do</span>
+          <h2 id="services-title">Roofing services in Sydney</h2>
+        </div>
+        <p style="max-width:44ch">Four services, done by the same people every time. If your roof needs something else, we'll tell you straight whether we're the right crew.</p>
       </div>
       <div class="services">
-        <article class="svc">
-          <h3>Leaks &amp; repairs</h3>
-          <p>Cracked tiles, rusted sheets, failed flashings and valley irons. We find the source, not just the wet patch on the ceiling.</p>
-          <span class="meta">Most repairs done in one visit</span>
-        </article>
-        <article class="svc">
-          <h3>Re-roofing</h3>
-          <p>Tile or old iron replaced with new steel sheeting, sarking and insulation blanket. Pitches from 5&deg; up.</p>
-          <span class="meta">Typical house: 3&ndash;5 days</span>
-        </article>
-        <article class="svc">
-          <h3>Tile restoration</h3>
-          <p>Pressure clean, re-bed and re-point ridge capping, replace broken tiles, then two coats of membrane.</p>
-          <span class="meta">Adds 15+ years to a sound tile roof</span>
-        </article>
-        <article class="svc">
-          <h3>Gutters &amp; downpipes</h3>
-          <p>Quad, half-round and box gutters replaced or repaired, plus leaf guard fitted to suit bushland blocks.</p>
-          <span class="meta">Matched to your roof colour</span>
-        </article>
+        <a class="svc" href="#quote">
+          <div class="ph" data-label="Leak repairs" style="--tone:#6B4A38"><img src="https://unsplash.com/photos/8ZReE_M3zzk/download?w=800" alt="Close-up of brown roof tiles" loading="lazy" width="800" height="600"></div>
+          <div class="svc-body">
+            <h3>Leaks &amp; repairs</h3>
+            <p>Cracked tiles, rusted sheets, failed flashings and valley irons. We find where the water gets in, not just where it drips.</p>
+            <div class="svc-meta"><span>From $350</span><span>Usually one visit</span></div>
+          </div>
+        </a>
+        <a class="svc" href="#quote">
+          <div class="ph" data-label="Re-roofing" style="--tone:#4E5358"><img src="https://unsplash.com/photos/PcMKpP0snfY/download?w=800" alt="Grey metal roof sheeting" loading="lazy" width="800" height="600"></div>
+          <div class="svc-body">
+            <h3>Re-roofing</h3>
+            <p>Old tile or iron replaced with new steel sheeting, sarking and an insulation blanket. Quieter, cooler and good for 50 years.</p>
+            <div class="svc-meta"><span>3&ndash;5 days</span><span>Most homes</span></div>
+          </div>
+        </a>
+        <a class="svc" href="#quote">
+          <div class="ph" data-label="Tile restoration" style="--tone:#7A4A33"><img src="https://unsplash.com/photos/_TR3XfBFqIc/download?w=800" alt="House with a clay tile roof" loading="lazy" width="800" height="600"></div>
+          <div class="svc-body">
+            <h3>Tile restoration</h3>
+            <p>Pressure clean, re-bed and re-point the ridge capping, replace broken tiles, then two coats of flexible membrane.</p>
+            <div class="svc-meta"><span>Adds 15+ years</span><span>2&ndash;4 days</span></div>
+          </div>
+        </a>
+        <a class="svc" href="#quote">
+          <div class="ph" data-label="Gutters" style="--tone:#55606A"><img src="https://unsplash.com/photos/kBc9SXXjezA/download?w=800" alt="Roof edge and gutter against a blue sky" loading="lazy" width="800" height="600"></div>
+          <div class="svc-body">
+            <h3>Gutters &amp; downpipes</h3>
+            <p>Quad, half-round and box gutters replaced or repaired, with leaf guard for bushland blocks. Colour-matched to your roof.</p>
+            <div class="svc-meta"><span>1 day</span><span>Most homes</span></div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="block band" id="process">
+  <section class="section checkins-sec" id="recent-jobs" aria-labelledby="jobs-title">
     <div class="wrap">
-      <div class="head">
-        <p class="label">How it works</p>
-        <h2>No surprises on the invoice</h2>
+      <div class="sec-head">
+        <div>
+          <span class="live-dot">Live job check-ins</span>
+          <h2 id="jobs-title">Recent roofing jobs near you</h2>
+          <p>Each pin is a job our crew checked in at, with a photo from the roof. This is the proof a roofer actually works in your street.</p>
+        </div>
+        <a class="btn" href="#quote">Get a quote in your suburb</a>
+      </div>
+
+      <!--
+        NearbyNow: to show your real check-ins, paste the widget code from your NearbyNow dashboard here
+        and remove the sample feed below. The map and feed are driven by the data-* attributes on each .ci card,
+        so you can also keep this design and fill it from the NearbyNow API.
+      -->
+      <div class="checkins">
+        <div class="map-card">
+          <div id="map" role="img" aria-label="Map of recent roofing jobs across Sydney"></div>
+          <div class="map-foot"><span><b id="jobCount">8</b> check-ins in the last 30 days</span><span>Sample data</span></div>
+        </div>
+
+        <div class="feed" id="feed">
+          <article class="ci" data-lat="-33.7317" data-lng="151.0036" data-suburb="Castle Hill">
+            <div class="ci-top"><span class="avatar">JM</span><div class="ci-who"><b>Jake M., roofer</b><span>checked in at Castle Hill, NSW</span></div><time datetime="2026-09-24">24 Sep</time></div>
+            <div><span class="tag">Tile restoration</span><p>Full restoration on a 1980s concrete tile roof. Re-bedded 42 m of ridge capping and replaced 30 cracked tiles before the membrane went on.</p></div>
+            <div class="ph" data-label="Tiles" style="--tone:#7A4A33"><img src="https://unsplash.com/photos/b-uNJfiyKIo/download?w=300" alt="Terracotta roof tiles after restoration" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.7047" data-lng="151.0993" data-suburb="Hornsby">
+            <div class="ci-top"><span class="avatar">SL</span><div class="ci-who"><b>Sam L., roofer</b><span>checked in at Hornsby, NSW</span></div><time datetime="2026-09-22">22 Sep</time></div>
+            <div><span class="tag">Leak repair</span><p>Leak over the back bedroom traced to a rusted valley iron. Replaced the valley and re-pointed both sides the same afternoon.</p></div>
+            <div class="ph" data-label="Valley" style="--tone:#4E5358"><img src="https://unsplash.com/photos/8VDDo5eDnXg/download?w=300" alt="Dark roof tiles at a valley" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.7527" data-lng="151.2860" data-suburb="Dee Why">
+            <div class="ci-top"><span class="avatar">RT</span><div class="ci-who"><b>Rhys T., roofer</b><span>checked in at Dee Why, NSW</span></div><time datetime="2026-09-19">19 Sep</time></div>
+            <div><span class="tag">Re-roof</span><p>Salt-damaged iron roof replaced with marine-grade steel, new sarking and insulation blanket. Four days, cleaned up daily.</p></div>
+            <div class="ph" data-label="Steel roof" style="--tone:#55606A"><img src="https://unsplash.com/photos/PcMKpP0snfY/download?w=300" alt="New metal roof sheets" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.7969" data-lng="151.1803" data-suburb="Chatswood">
+            <div class="ci-top"><span class="avatar">JM</span><div class="ci-who"><b>Jake M., roofer</b><span>checked in at Chatswood, NSW</span></div><time datetime="2026-09-16">16 Sep</time></div>
+            <div><span class="tag">Gutters</span><p>Replaced 38 m of quad gutter and three downpipes, colour-matched to the existing roof, with leaf guard fitted.</p></div>
+            <div class="ph" data-label="Gutter" style="--tone:#5A6570"><img src="https://unsplash.com/photos/kBc9SXXjezA/download?w=300" alt="Roof gutter" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.8150" data-lng="151.0011" data-suburb="Parramatta">
+            <div class="ci-top"><span class="avatar">DK</span><div class="ci-who"><b>Dan K., roofer</b><span>checked in at Parramatta, NSW</span></div><time datetime="2026-09-12">12 Sep</time></div>
+            <div><span class="tag">Leak repair</span><p>Storm damage: 14 slipped and broken terracotta tiles replaced and a flashing resealed around the chimney.</p></div>
+            <div class="ph" data-label="Terracotta" style="--tone:#7A4A33"><img src="https://unsplash.com/photos/nI8x_NzquX4/download?w=300" alt="Terracotta tile roof with windows" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.7120" data-lng="150.9500" data-suburb="Kellyville">
+            <div class="ci-top"><span class="avatar">SL</span><div class="ci-who"><b>Sam L., roofer</b><span>checked in at Kellyville, NSW</span></div><time datetime="2026-09-08">8 Sep</time></div>
+            <div><span class="tag">Inspection</span><p>Pre-purchase roof inspection with a 22-photo report. Minor ridge re-pointing recommended, no structural issues.</p></div>
+            <div class="ph" data-label="Inspection" style="--tone:#6B4A38"><img src="https://unsplash.com/photos/_TR3XfBFqIc/download?w=300" alt="Clay tile roof being inspected" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.6777" data-lng="151.3031" data-suburb="Mona Vale">
+            <div class="ci-top"><span class="avatar">RT</span><div class="ci-who"><b>Rhys T., roofer</b><span>checked in at Mona Vale, NSW</span></div><time datetime="2026-09-03">3 Sep</time></div>
+            <div><span class="tag">Tile restoration</span><p>Moss and lichen cleared, 60 m of ridge re-bedded and the roof coated in a light colour to cut summer heat.</p></div>
+            <div class="ph" data-label="Tiles" style="--tone:#6B4A38"><img src="https://unsplash.com/photos/8ZReE_M3zzk/download?w=300" alt="Restored roof tiles" loading="lazy" width="300" height="300"></div>
+          </article>
+          <article class="ci" data-lat="-33.9110" data-lng="151.1550" data-suburb="Marrickville">
+            <div class="ci-top"><span class="avatar">DK</span><div class="ci-who"><b>Dan K., roofer</b><span>checked in at Marrickville, NSW</span></div><time datetime="2026-08-29">29 Aug</time></div>
+            <div><span class="tag">Re-roof</span><p>Terrace re-roof with a new box gutter and parapet flashings. Worked around the neighbours' party wall with no damage.</p></div>
+            <div class="ph" data-label="Re-roof" style="--tone:#4E5358"><img src="https://unsplash.com/photos/IfXxkrdq9z4/download?w=300" alt="House with new roof" loading="lazy" width="300" height="300"></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews" aria-labelledby="reviews-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Google reviews</span>
+          <h2 id="reviews-title">What Sydney homeowners say</h2>
+        </div>
+        <p style="max-width:40ch">Sample reviews shown. On the live site, connect your Google Business Profile so new reviews appear here automatically.</p>
+      </div>
+      <div class="reviews">
+        <aside class="score" aria-label="Rating summary">
+          <div class="score-big">
+            <strong>4.9</strong>
+            <div>
+              <span class="stars" aria-label="4.9 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+              <small>Based on 312 reviews</small>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="bar"><span>5</span><i style="--w:92%"></i><span>287</span></div>
+            <div class="bar"><span>4</span><i style="--w:6%"></i><span>19</span></div>
+            <div class="bar"><span>3</span><i style="--w:1%"></i><span>4</span></div>
+            <div class="bar"><span>2</span><i style="--w:0.5%"></i><span>1</span></div>
+            <div class="bar"><span>1</span><i style="--w:0.5%"></i><span>1</span></div>
+          </div>
+          <a class="btn primary" href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID" rel="noopener" target="_blank">Write a review</a>
+          <p class="source">Replace YOUR_PLACE_ID with your Google Place ID</p>
+        </aside>
+
+        <div class="rev-grid">
+          <figure class="rev">
+            <div class="rev-top"><span class="avatar" style="--tone:#3C5A78">MC</span><div><b>Michelle C.</b><span>Castle Hill &middot; 2 weeks ago</span></div><span class="gmark" aria-label="Google review">G</span></div>
+            <span class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <blockquote>Two other companies wanted to replace the whole roof. Jake found one cracked valley, fixed it in an afternoon, and it's been dry through every storm since. Sent photos of everything before and after.</blockquote>
+            <figcaption class="job">Leak repair</figcaption>
+          </figure>
+          <figure class="rev">
+            <div class="rev-top"><span class="avatar" style="--tone:#7A4A33">PN</span><div><b>Priya N.</b><span>Hornsby &middot; 1 month ago</span></div><span class="gmark" aria-label="Google review">G</span></div>
+            <span class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <blockquote>Quote arrived the next day, itemised and exactly what we paid. The crew cleaned up every afternoon. The restored roof looks brand new.</blockquote>
+            <figcaption class="job">Tile restoration</figcaption>
+          </figure>
+          <figure class="rev">
+            <div class="rev-top"><span class="avatar" style="--tone:#2E6A4F">GW</span><div><b>Greg W.</b><span>Dee Why &middot; 1 month ago</span></div><span class="gmark" aria-label="Google review">G</span></div>
+            <span class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <blockquote>Our old iron roof was rusting through from the salt air. They re-roofed in four days, and the house is noticeably quieter in the rain and cooler upstairs.</blockquote>
+            <figcaption class="job">Re-roof</figcaption>
+          </figure>
+          <figure class="rev">
+            <div class="rev-top"><span class="avatar" style="--tone:#5B4E7A">AL</span><div><b>Anh L.</b><span>Parramatta &middot; 2 months ago</span></div><span class="gmark" aria-label="Google review">G</span></div>
+            <span class="stars" aria-label="5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+            <blockquote>Called on a Sunday after the hail storm with water coming through the ceiling. Dan had a tarp on within two hours and fixed it properly that week.</blockquote>
+            <figcaption class="job">Emergency repair</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">How it works</span>
+          <h2 id="process-title">No surprises on the invoice</h2>
+        </div>
+        <p style="max-width:40ch">The same three steps on every job, from a single cracked tile to a full re-roof.</p>
       </div>
       <ol class="steps">
-        <li>
-          <h3>We inspect</h3>
-          <p>A licensed roofer gets up on the roof, not a salesperson with a clipboard. You get photos of what we find.</p>
-        </li>
-        <li>
-          <h3>You get a fixed quote</h3>
-          <p>Written, itemised and fixed price, in your inbox within 48 hours. No deposit for jobs under $5,000.</p>
-        </li>
-        <li>
-          <h3>We do the job</h3>
-          <p>Our own crew, no subbies. The site is cleaned daily, and the warranty certificate arrives with the final invoice.</p>
-        </li>
+        <li><h3>We inspect</h3><p>A licensed roofer gets up on the roof, not a salesperson with a clipboard. You see photos of everything we find.</p></li>
+        <li><h3>Fixed written quote</h3><p>Itemised and fixed price, in your inbox within 48 hours. No deposit for jobs under $5,000.</p></li>
+        <li><h3>We do the job</h3><p>Our own crew, cleaned up daily. Your 10-year warranty certificate arrives with the final invoice.</p></li>
       </ol>
-      <figure class="quote-mark">
-        <blockquote>&ldquo;Two other companies wanted to replace the whole roof. They found one cracked valley, fixed it in an afternoon, and it's been dry through every storm since.&rdquo;</blockquote>
-        <cite>Example review &middot; homeowner in Castle Hill</cite>
-      </figure>
+      <div class="band-photo">
+        <div class="ph" data-label="Photo: terracotta tile roof"><img src="https://unsplash.com/photos/b-uNJfiyKIo/download?w=1200" alt="Terracotta roof tiles against a blue sky" loading="lazy" width="1200" height="675"></div>
+        <div class="ph" data-label="Photo: dark tile roof"><img src="https://unsplash.com/photos/8VDDo5eDnXg/download?w=1200" alt="Dark roof tiles on a white-walled house" loading="lazy" width="1200" height="675"></div>
+      </div>
     </div>
   </section>
 
-  <section class="block contact" id="quote">
-    <div class="wrap">
-      <div class="aside">
-        <div class="head" style="margin-bottom:0">
-          <p class="label">Free quote</p>
-          <h2>Tell us about your roof</h2>
-          <p>We reply the same business day. For an active leak, call and we'll send someone out.</p>
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-wrap">
+      <div style="display:grid;gap:16px;align-content:start">
+        <span class="eyebrow">Questions</span>
+        <h2 id="faq-title">Roofing questions we get every week</h2>
+        <p style="color:var(--muted)">Can't see yours? Call <b style="color:var(--ink)">1300 000 000</b> and ask a roofer directly.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>How much does a roof repair cost in Sydney?</summary><p>Most leak repairs we do cost between $350 and $1,200, depending on access and what has failed. You get a fixed written price before any work starts.</p></details>
+        <details><summary>Do you charge for roof inspections?</summary><p>No. Inspections and quotes are free across our service area, and you get photos of everything we find.</p></details>
+        <details><summary>Should I restore or replace my tile roof?</summary><p>If the tiles and battens are sound, a restoration costs far less and adds 15 or more years. If battens are rotten or many tiles are porous, re-roofing in steel is usually better value. We'll show you photos and explain both options.</p></details>
+        <details><summary>Can you come out for an emergency leak?</summary><p>Yes. Call us and we'll make the roof watertight the same day where it's safe to go up, then quote the permanent fix.</p></details>
+        <details><summary>Are you licensed and insured?</summary><p>Yes. We hold a NSW contractor licence for roofing and carry public liability and workers compensation insurance. Certificates are available on request.</p></details>
+        <details><summary>What warranty do you give?</summary><p>Every job carries our 10-year workmanship warranty, plus the manufacturer's warranty on materials.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="quote" aria-labelledby="quote-title">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Free quote</span>
+        <h2 id="quote-title" style="margin-top:16px">Tell us about your roof</h2>
+        <p style="color:var(--muted);margin-top:16px;max-width:44ch">We reply the same business day. For an active leak, call and we'll send someone out.</p>
+        <div class="contact-list">
+          <div><span class="ic"><svg><use href="#i-phone"/></svg></span><span><b>Phone</b><span class="big" id="phoneText">1300 000 000</span><button class="copy" type="button" data-copy="phoneText">Copy</button></span></div>
+          <div><span class="ic"><svg><use href="#i-mail"/></svg></span><span><b>Email</b>hello@battenandridge.com.au</span></div>
+          <div><span class="ic"><svg><use href="#i-clock"/></svg></span><span><b>Hours</b>Mon&ndash;Fri 7am&ndash;5pm &middot; Sat 8am&ndash;12pm &middot; Emergencies 7 days</span></div>
+          <div><span class="ic"><svg><use href="#i-pin"/></svg></span><span><b>Service area</b>North Shore, Northern Beaches, Hills District, Parramatta and the Inner West</span></div>
         </div>
-        <dl>
-          <div><dt class="label">Phone</dt><dd class="phone">1300 000 000</dd></div>
-          <div><dt class="label">Hours</dt><dd>Mon&ndash;Fri 7am&ndash;5pm, Sat 8am&ndash;12pm</dd></div>
-          <div><dt class="label">Service areas</dt><dd>North Shore, Northern Beaches, Hills District, Parramatta and the Inner West</dd></div>
-        </dl>
       </div>
 
-      <form id="quoteForm" novalidate>
+      <form class="form-card" id="quoteForm" novalidate>
         <div class="row">
-          <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="phoneIn">Phone</label><input id="phoneIn" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="fullname" autocomplete="name" required></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
         </div>
         <div class="row">
-          <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" autocomplete="address-level2" required></div>
+          <div class="field"><label for="f-suburb">Suburb</label><input id="f-suburb" name="suburb" autocomplete="address-level2" required></div>
           <div class="field">
-            <label for="service">What do you need?</label>
-            <select id="service" name="service">
-              <option>Leak or repair</option>
+            <label for="f-service">What do you need?</label>
+            <select id="f-service" name="service">
+              <option>Leak or roof repair</option>
               <option>Re-roof</option>
               <option>Tile restoration</option>
               <option>Gutters &amp; downpipes</option>
+              <option>Inspection or report</option>
               <option>Not sure yet</option>
             </select>
           </div>
         </div>
-        <div class="field"><label for="details">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="details" name="details" placeholder="e.g. Water coming through the ceiling in the back bedroom after heavy rain"></textarea></div>
-        <button class="btn primary" type="submit" style="justify-self:start">Request my free quote</button>
-        <p class="form-note" id="formNote">Demo form: nothing is sent yet. Connect it to your email or CRM before going live.</p>
+        <div class="field">
+          <label for="f-roof">Roof type</label>
+          <select id="f-roof" name="roof">
+            <option>Concrete tile</option>
+            <option>Terracotta tile</option>
+            <option>Metal / steel sheet</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-details">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="f-details" name="details" placeholder="e.g. Water coming through the ceiling in the back bedroom after heavy rain"></textarea></div>
+        <button class="btn primary" type="submit">Request my free quote</button>
+        <p class="fine"><svg><use href="#i-check"/></svg>Demo form: connect it to your email or CRM before launch.</p>
       </form>
     </div>
   </section>
@@ -342,34 +738,133 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: 
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 Batten &amp; Ridge Roofing &middot; Lic. 000000C</span>
-    <span>Fully insured &middot; ABN 00 000 000 000</span>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><svg><use href="#i-roof"/></svg><span><b>Batten &amp; Ridge</b><small>Roofing &middot; Sydney</small></span></a>
+        <p>Licensed roofers for leak repairs, re-roofing, tile restorations and gutters across Sydney since 2009.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#services">Roof leak repairs</a></li>
+          <li><a href="#services">Re-roofing</a></li>
+          <li><a href="#services">Tile roof restoration</a></li>
+          <li><a href="#services">Gutters &amp; downpipes</a></li>
+          <li><a href="#quote">Roof inspections</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Areas we service</h3>
+        <ul class="suburbs">
+          <li>Roofing Castle Hill</li><li>Roofing Baulkham Hills</li><li>Roofing Kellyville</li>
+          <li>Roofing Hornsby</li><li>Roofing Epping</li><li>Roofing Ryde</li>
+          <li>Roofing Chatswood</li><li>Roofing Lane Cove</li><li>Roofing Dee Why</li>
+          <li>Roofing Mona Vale</li><li>Roofing Parramatta</li><li>Roofing Marrickville</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Batten &amp; Ridge Roofing &middot; NSW Lic. 000000C &middot; ABN 00 000 000 000</span>
+      <span>Photos from Unsplash (free licence) &middot; Map &copy; OpenStreetMap contributors &copy; CARTO</span>
+    </div>
   </div>
 </footer>
 
-<script>
-  const swatches = document.querySelectorAll('.sw');
-  const swName = document.getElementById('swName');
-  swatches.forEach(btn => btn.addEventListener('click', () => {
-    swatches.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-    document.documentElement.style.setProperty('--roof', btn.style.getPropertyValue('--c'));
-    swName.textContent = btn.dataset.name;
-  }));
+<div class="mobile-bar">
+  <a class="btn" href="tel:1300000000"><svg><use href="#i-phone"/></svg>Call</a>
+  <a class="btn primary" href="#quote">Free quote</a>
+</div>
 
-  const form = document.getElementById('quoteForm');
-  const note = document.getElementById('formNote');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const missing = [...form.querySelectorAll('[required]')].filter(i => !i.value.trim());
-    if (missing.length) {
-      note.className = 'form-note';
-      note.textContent = 'Please fill in your ' + missing.map(i => form.querySelector('label[for="' + i.id + '"]').textContent.toLowerCase()).join(', ') + '.';
-      missing[0].focus();
-      return;
-    }
-    note.className = 'sent';
-    note.textContent = 'Thanks, ' + form.elements.name.value.trim().split(' ')[0] + '. This is a demo, so nothing was sent. Once the form is connected, requests will go straight to your inbox.';
+<script src="vendor/leaflet.js"></script>
+<script>
+(function () {
+  // Photos: swap in a styled stand-in when an image can't load
+  document.querySelectorAll('.ph img').forEach(function (img) {
+    function fail() { img.closest('.ph').classList.add('fallback'); img.remove(); }
+    if (img.complete && img.naturalWidth === 0) fail();
+    else img.addEventListener('error', fail);
   });
+
+  // Relative dates on the check-in feed
+  var now = new Date('2026-09-25T12:00:00+10:00');
+  if (Date.now() > now.getTime()) now = new Date();
+  document.querySelectorAll('.ci time').forEach(function (t) {
+    var days = Math.round((now - new Date(t.getAttribute('datetime') + 'T12:00:00+10:00')) / 864e5);
+    if (days <= 0) t.textContent = 'Today';
+    else if (days === 1) t.textContent = 'Yesterday';
+    else if (days < 14) t.textContent = days + ' days ago';
+    else if (days < 60) t.textContent = Math.round(days / 7) + ' weeks ago';
+  });
+
+  // Map of check-ins
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.ci'));
+  document.getElementById('jobCount').textContent = cards.length;
+  if (window.L) {
+    var mapEl = document.getElementById('map');
+    var map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+    var tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      subdomains: 'abcd', maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(map);
+    var tileErrors = 0;
+    tiles.on('tileerror', function () { if (++tileErrors > 2) mapEl.classList.add('no-tiles'); });
+
+    var markers = [];
+    cards.forEach(function (card, i) {
+      var lat = parseFloat(card.dataset.lat), lng = parseFloat(card.dataset.lng);
+      var icon = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [30, 30], iconAnchor: [15, 30], popupAnchor: [0, -30] });
+      var m = L.marker([lat, lng], { icon: icon, title: card.dataset.suburb }).addTo(map);
+      var tag = card.querySelector('.tag').textContent;
+      m.bindPopup('<b>' + tag + '</b><br>' + card.dataset.suburb + ', NSW<br><span style="color:#5F615C">' + card.querySelector('time').textContent + '</span>');
+      m.bindTooltip(card.dataset.suburb, { direction: 'right', offset: [12, -16], className: 'pin-label', permanent: false });
+      markers.push(m);
+
+      function hot(on) {
+        var pin = m.getElement() && m.getElement().querySelector('.pin');
+        if (pin) pin.classList.toggle('hot', on);
+        card.classList.toggle('hot', on);
+      }
+      card.addEventListener('mouseenter', function () { hot(true); });
+      card.addEventListener('mouseleave', function () { hot(false); });
+      card.addEventListener('click', function () { map.flyTo([lat, lng], 13, { duration: .6 }); m.openPopup(); });
+      m.on('mouseover', function () { hot(true); });
+      m.on('mouseout', function () { hot(false); });
+      m.on('click', function () { card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
+    });
+    map.fitBounds(L.featureGroup(markers).getBounds().pad(0.15));
+  }
+
+  // Forms: demo handling until connected to a real endpoint
+  function wire(form, fields) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var old = form.querySelector('.form-msg'); if (old) old.remove();
+      var missing = Array.prototype.filter.call(form.querySelectorAll('[required]'), function (i) { return !i.value.trim(); });
+      var msg = document.createElement('p'); msg.className = 'form-msg'; msg.setAttribute('role', 'status');
+      if (missing.length) {
+        msg.textContent = 'Please add your ' + missing.map(function (i) { return form.querySelector('label[for="' + i.id + '"]').textContent.replace(/\s*\(.*\)/, '').toLowerCase(); }).join(' and ') + '.';
+        missing[0].focus();
+      } else {
+        msg.textContent = 'Thanks. This is a demo, so nothing was sent. Once connected, requests go straight to your inbox.';
+      }
+      form.querySelector('button[type="submit"]').insertAdjacentElement('afterend', msg);
+    });
+  }
+  wire(document.getElementById('quickForm'));
+  wire(document.getElementById('quoteForm'));
+
+  // Copy phone number
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.copy);
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1500); };
+      try {
+        navigator.clipboard.writeText(el.textContent).then(done, function () { selectText(el); });
+      } catch (err) { selectText(el); }
+    });
+  });
+  function selectText(el) { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+})();
 </script>
 </body>
 </html>
