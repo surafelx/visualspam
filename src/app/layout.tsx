@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import MiniPlayer from '@/components/MiniPlayer'
+import PlayerProvider from '@/components/PlayerProvider'
 import { media, site } from '@/content/site'
 import './globals.css'
 
@@ -26,9 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="min-h-screen font-sans antialiased">
-        <Nav />
-        {children}
-        <Footer />
+        <PlayerProvider>
+          <Nav />
+          {children}
+          <Footer />
+          <MiniPlayer />
+        </PlayerProvider>
       </body>
     </html>
   )

@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import AsciiPortrait from '@/components/AsciiPortrait'
+import MusicPlayer from '@/components/MusicPlayer'
 import SignalInstrument from '@/components/SignalInstrument'
 import WorkCard from '@/components/WorkCard'
 import { media, site } from '@/content/site'
 import { shows } from '@/content/shows'
+import { tracks } from '@/content/tracks'
 import { works } from '@/content/works'
 
 function SectionHead({ index, title, note }: { index: string; title: string; note?: string }) {
@@ -32,7 +34,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="video-react absolute inset-0 h-full w-full object-cover"
           src={media.loop}
           autoPlay
           loop
@@ -52,7 +54,7 @@ export default function Home() {
             {site.tagline} — {site.disciplines.join(' / ')}
           </p>
           <h1 className="font-display wordmark wordmark-glitch text-[17vw] leading-none sm:text-[16vw] lg:text-[13rem]">
-            {site.name}
+            <span className="wordmark-react">{site.name}</span>
           </h1>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -133,7 +135,18 @@ export default function Home() {
 
         {/* Sound */}
         <section id="sound" className="py-24">
-          <SectionHead index="03" title="Sound" note="A small instrument that runs in your browser. The scope draws what you hear." />
+          <SectionHead
+            index="03"
+            title="Sound"
+            note="Everything you play here also drives the visuals: the portrait, the wordmark and the video react to it."
+          />
+          {tracks.length > 0 && (
+            <div className="mb-16">
+              <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-paper/50">Tracks</h3>
+              <MusicPlayer />
+            </div>
+          )}
+          <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-paper/50">Instrument</h3>
           <SignalInstrument />
           <p className="mt-4 font-mono text-xs text-paper/50">
             Drag on the scope: left to right is pitch, bottom to top is filter colour. Mind your volume.

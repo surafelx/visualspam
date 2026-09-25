@@ -1,12 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { site } from '@/content/site'
+import { audioSupported, getServerSources, getSources, levels, startMic, stopMic, subscribe } from '@/lib/audio'
 
 // The artist as live ASCII. A photo (site.portrait) is converted to characters in
 // the browser every frame. The head turns to look at the pointer, characters near
 // the pointer glitch, and the buttons around the head are the way into the site.
+// Whatever the site is playing (or hearing through the mic) drives it too: the head
+// swells with the bass, the mids brighten it and the highs tear and glitch lines.
 // If the photo is missing (or can't be read because of CORS) a drawn head is used.
 
 const RAMP = ' .`:-=+*cox#%&@'
@@ -123,6 +126,20 @@ export default function AsciiPortrait() {
   const [colour, setColour] = useState(false)
   const colourRef = useRef(false)
   colourRef.current = colour
+  const micOn = useSyncExternalStore(subscribe, () => getSources().mic, () => getServerSources().mic)
+  const [micError, setMicError] = useState(false)
+  const [canMic, setCanMic] = useState(false)
+  useEffect(() => setCanMic(audioSupported() && !!navigator.mediaDevices?.getUserMedia), [])
+
+  const toggleMic = async () => {
+    if (micOn) return stopMic()
+    try {
+      setMicError(false)
+      await startMic()
+    } catch {
+      setMicError(true)
+    }
+  }
 
   useEffect(() => {
     const stage = stageRef.current
@@ -178,6 +195,7 @@ export default function AsciiPortrait() {
       const W = stage.clientWidth
       const H = stage.clientHeight
       const p = pointer.current
+      const lv = levels()
 
       // Where the head wants to look, in -1..1.
       let aim = { x: 0, y: 0 }
@@ -190,7 +208,7 @@ export default function AsciiPortrait() {
 
       // Fake a head turn: squash toward the look side and slide the image with it.
       const turn = 1 - Math.abs(look.x) * 0.12
-      const size = Math.min(cols * CHAR_W, rows * LINE_H) // square area, in px
+      const size = Math.min(cols * CHAR_W, rows * LINE_H) * (1 + lv.bass * 0.1) // square area, in px
       const fw = (size / CHAR_W) * turn
       const fh = size / LINE_H
       sg.fillStyle = '#000'
@@ -210,16 +228,26 @@ export default function AsciiPortrait() {
 
       const pc = p.x / CHAR_W
       const pr = p.y / LINE_H
-      const radius = p.down ? 12 : 7
+      const radius = (p.down ? 12 : 7) + lv.bass * 6
       const hot: { c: number; r: number; ch: string }[] = []
       const colour = colourRef.current
+      const sparkle = lv.energy * lv.energy * 0.1
+      const bright = 1 + lv.mid * 0.5
 
       g.fillStyle = '#f2f0eb'
       for (let r = 0; r < rows; r++) {
         let line = ''
+        // a horizontal tear on loud, bright moments
+        const tear =
+          lv.energy > 0.25 && Math.random() < lv.high * 0.2 ? (Math.random() - 0.5) * lv.energy * 60 : 0
         for (let c = 0; c < cols; c++) {
           const i = (r * cols + c) * 4
-          let v = lut[lum(px, i)] / 255
+          let v = Math.min(1, (lut[lum(px, i)] / 255) * bright)
+          if (v > 0.15 && Math.random() < sparkle) {
+            hot.push({ c, r, ch: GLITCH[(Math.random() * GLITCH.length) | 0] })
+            line += ' '
+            continue
+          }
           if (p.inside) {
             const dist = Math.hypot((c - pc) * 0.6, r - pr)
             if (dist < radius) {
@@ -237,11 +265,11 @@ export default function AsciiPortrait() {
             // the photo's own colour, lifted so dark areas still show
             const k = 0.6 + v
             g.fillStyle = `rgb(${Math.min(255, px[i] * k + 40)},${Math.min(255, px[i + 1] * k + 40)},${Math.min(255, px[i + 2] * k + 40)})`
-            g.fillText(ch, c * CHAR_W, r * LINE_H)
+            g.fillText(ch, c * CHAR_W + tear, r * LINE_H)
           }
           line += ch
         }
-        if (!colour) g.fillText(line, 0, r * LINE_H)
+        if (!colour) g.fillText(line, tear, r * LINE_H)
       }
       g.fillStyle = '#ff2d2d'
       for (const h of hot) g.fillText(h.ch, h.c * CHAR_W, h.r * LINE_H)
@@ -317,14 +345,27 @@ export default function AsciiPortrait() {
         ))}
       </nav>
 
-      <button
-        type="button"
-        onClick={() => setColour((c) => !c)}
-        aria-pressed={colour}
-        className="absolute right-0 top-0 cursor-none bg-ink/70 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-paper/70 hover:text-signal"
-      >
-        {colour ? '[x] colour' : '[ ] colour'}
-      </button>
+      <div className="absolute right-0 top-0 flex gap-2 font-mono text-[10px] uppercase tracking-[0.2em]">
+        {canMic && (
+          <button
+            type="button"
+            onClick={toggleMic}
+            aria-pressed={micOn}
+            title="Let the portrait listen to the room through your microphone"
+            className="cursor-none bg-ink/70 px-2 py-1 text-paper/70 hover:text-signal"
+          >
+            {micError ? '[!] mic blocked' : micOn ? '[x] mic' : '[ ] mic'}
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={() => setColour((c) => !c)}
+          aria-pressed={colour}
+          className="cursor-none bg-ink/70 px-2 py-1 text-paper/70 hover:text-signal"
+        >
+          {colour ? '[x] colour' : '[ ] colour'}
+        </button>
+      </div>
 
       <pre
         ref={cursorRef}
