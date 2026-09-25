@@ -18,8 +18,6 @@ The previous version of the site (the floating-tiles home page, Supabase admin a
 - **About** and **Contact**.
 - **Video log**: links out to the separate video-log site.
 
-- **Roofing demo** (`/roofing`): a standalone single-page site for a roofing business, kept in `public/roofing/`. It is plain HTML and doesn't touch the portfolio pages.
-
 Old routes redirect to their new place: `/jan-14` goes to `/work/jan-14`, and `/visuals`, `/live`, `/files` and `/info` go to sections on the home page.
 
 ## Editing content
