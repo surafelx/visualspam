@@ -49,9 +49,9 @@ export default function MiniPlayer() {
             <span className="ml-3 font-mono text-xs text-paper/40">
               {formatTime(time)} / {formatTime(duration)}
             </span>
-        </p>
+          </p>
+        </div>
       </div>
-    </div>
     </>
   )
 }
