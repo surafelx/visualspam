@@ -20,7 +20,7 @@ const buttons = [
   { label: 'LIVE', href: '/#live', pos: 'right-0 top-[12%] sm:right-[4%]' },
   { label: 'SOUND', href: '/#sound', pos: 'left-0 top-[55%]' },
   { label: 'ABOUT', href: '/#about', pos: 'right-0 top-[55%]' },
-  { label: 'CONTACT', href: '/#contact', pos: 'bottom-2 left-1/2 -translate-x-1/2' },
+  { label: 'CONTACT', href: '/#contact', pos: 'bottom-[6%] right-0' },
 ]
 
 // A shaded head and shoulders, used when there's no photo.

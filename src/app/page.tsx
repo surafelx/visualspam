@@ -51,7 +51,7 @@ export default function Home() {
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-paper/70">
             {site.tagline} — {site.disciplines.join(' / ')}
           </p>
-          <h1 className="font-display wordmark wordmark-glitch text-[22vw] leading-none sm:text-[16vw] lg:text-[13rem]">
+          <h1 className="font-display wordmark wordmark-glitch text-[17vw] leading-none sm:text-[16vw] lg:text-[13rem]">
             {site.name}
           </h1>
           <div className="mt-8 flex flex-wrap gap-4">
