@@ -3,6 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
   },
+  // Serve the static roofing demo in public/roofing at /roofing.
+  async rewrites() {
+    return [{ source: '/roofing', destination: '/roofing/index.html' }]
+  },
   // Keep links to the old site's routes working.
   async redirects() {
     return [
