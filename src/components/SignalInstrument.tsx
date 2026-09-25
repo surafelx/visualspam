@@ -1,9 +1,10 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { audioSupported, getEngine, getSources, peekEngine, setSource } from '@/lib/audio'
 
 // A small generative instrument: detuned saws through a swept low-pass filter,
-// pulsed by an LFO. The same analyser that listens to it draws the scope, so the
+// pulsed by an LFO. The site's shared analyser draws the scope, so the
 // picture is the sound. Drag on the scope to play it (x = pitch, y = colour).
 
 type Params = { pitch: number; rate: number; color: number } // all 0..1
@@ -11,7 +12,6 @@ type Params = { pitch: number; rate: number; color: number } // all 0..1
 type Patch = {
   ctx: AudioContext
   master: GainNode
-  analyser: AnalyserNode
   oscs: OscillatorNode[]
   filter: BiquadFilterNode
   lfo: OscillatorNode
@@ -23,12 +23,9 @@ const toCutoff = (c: number) => 120 * Math.pow(2, c * 6) // ~120 Hz to ~7.7 kHz
 const toRate = (r: number) => 0.25 + r * 7.75 // pulses per second
 
 function buildPatch(p: Params): Patch {
-  const ctx = new AudioContext()
+  const { ctx, out } = getEngine()
   const master = ctx.createGain()
   master.gain.value = 0
-  const analyser = ctx.createAnalyser()
-  analyser.fftSize = 2048
-  analyser.smoothingTimeConstant = 0.8
 
   const filter = ctx.createBiquadFilter()
   filter.type = 'lowpass'
@@ -65,11 +62,11 @@ function buildPatch(p: Params): Patch {
     return o
   })
 
-  filter.connect(vca).connect(master).connect(analyser).connect(ctx.destination)
+  filter.connect(vca).connect(master).connect(out)
   lfo.start()
   master.gain.setTargetAtTime(0.35, ctx.currentTime, 0.4)
 
-  return { ctx, master, analyser, oscs, filter, lfo, lfoDepth }
+  return { ctx, master, oscs, filter, lfo, lfoDepth }
 }
 
 function applyParams(patch: Patch, p: Params) {
@@ -98,7 +95,7 @@ export default function SignalInstrument() {
   }, [])
 
   const start = useCallback(async () => {
-    if (typeof window === 'undefined' || !('AudioContext' in window)) {
+    if (!audioSupported()) {
       setSupported(false)
       return
     }
@@ -106,6 +103,7 @@ export default function SignalInstrument() {
     await patch.ctx.resume()
     patchRef.current = patch
     setPlaying(true)
+    setSource('synth', true)
   }, [])
 
   const stop = useCallback(() => {
@@ -113,8 +111,13 @@ export default function SignalInstrument() {
     if (!patch) return
     patchRef.current = null
     setPlaying(false)
+    setSource('synth', false)
     patch.master.gain.setTargetAtTime(0, patch.ctx.currentTime, 0.15)
-    setTimeout(() => patch.ctx.close(), 800)
+    setTimeout(() => {
+      patch.oscs.forEach((o) => o.stop())
+      patch.lfo.stop()
+      patch.master.disconnect()
+    }, 800)
   }, [])
 
   useEffect(() => () => stop(), [stop])
@@ -143,14 +146,17 @@ export default function SignalInstrument() {
     const draw = () => {
       const { width: w, height: h } = canvas
       const p = paramsRef.current
-      const patch = patchRef.current
+      const src = getSources()
+      const eng = peekEngine()
+      // Scope whatever the site is hearing: this synth, the music player or the mic.
+      const analyser = eng && (patchRef.current || src.player || src.mic) ? eng.analyser : null
       frame++
 
       g.fillStyle = 'rgba(10,10,11,0.35)'
       g.fillRect(0, 0, w, h)
 
-      if (patch) {
-        patch.analyser.getByteFrequencyData(freq)
+      if (analyser) {
+        analyser.getByteFrequencyData(freq)
         const bars = 96
         const bw = w / bars
         g.fillStyle = 'rgba(45,91,255,0.55)'
@@ -158,7 +164,7 @@ export default function SignalInstrument() {
           const v = freq[Math.floor((i / bars) * 300)] / 255
           g.fillRect(i * bw, h - v * h * 0.9, bw - 2, v * h * 0.9)
         }
-        patch.analyser.getByteTimeDomainData(time)
+        analyser.getByteTimeDomainData(time)
       }
 
       g.lineWidth = Math.max(2, w / 500)
@@ -170,7 +176,7 @@ export default function SignalInstrument() {
       for (let i = 0; i < n; i++) {
         const x = (i / (n - 1)) * w
         let v: number
-        if (patch) {
+        if (analyser) {
           v = (time[i * 2] - 128) / 128
         } else {
           const t = reduceMotion ? 0 : frame / 60

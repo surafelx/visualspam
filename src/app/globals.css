@@ -10,6 +10,11 @@
   --paper: #f2f0eb;
   --signal: #ff2d2d;
   --pulse: #2d5bff;
+  /* live audio levels, 0..1, written every frame by src/lib/audio.ts */
+  --bass: 0;
+  --mid: 0;
+  --high: 0;
+  --energy: 0;
 }
 
 html {
@@ -33,14 +38,28 @@ body {
   line-height: 0.85;
 }
 
-/* The wordmark keeps the red-and-blue offset from the original site. */
+/* The wordmark keeps the red-and-blue offset from the original site. The offset
+   splits wider with the bass and a cyan edge appears with the highs. */
 .wordmark {
+  --split: calc(0.04em + var(--bass) * 0.1em) 0 0 var(--pulse), calc(var(--high) * -0.06em) 0 0 #0ff;
   color: var(--signal);
-  text-shadow: 0.04em 0 0 var(--pulse);
+  text-shadow: var(--split);
+}
+
+/* The letters swell with the bass. On an inner inline-block so it doesn't fight the glitch animation. */
+.wordmark-react {
+  display: inline-block;
+  transform: scaleY(calc(1 + var(--bass) * 0.08));
+  transform-origin: bottom;
+}
+
+.video-react {
+  filter: brightness(calc(0.75 + var(--energy) * 0.9)) saturate(calc(1 + var(--bass) * 1.5))
+    hue-rotate(calc(var(--high) * 40deg));
 }
 
 @keyframes rgb-split {
-  0%, 92%, 100% { text-shadow: 0.04em 0 0 var(--pulse); transform: translate(0); }
+  0%, 92%, 100% { text-shadow: var(--split); transform: translate(0); }
   94% { text-shadow: -0.06em 0 0 var(--pulse), 0.03em 0 0 #0ff; transform: translate(-0.01em, 0.005em); }
   96% { text-shadow: 0.08em 0 0 var(--pulse); transform: translate(0.01em, -0.005em); }
 }

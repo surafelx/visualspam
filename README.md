@@ -13,7 +13,8 @@ The previous version of the site (the floating-tiles home page, Supabase admin a
   - The `[ WORK ] [ LIVE ] [ SOUND ] [ ABOUT ] [ CONTACT ]` buttons around the head link into the page. A `[ ] colour` toggle switches to the photo's own colours.
 - **Work** (`/#work`): a grid of pieces. Hovering a card plays its clip. Each piece has its own page at `/work/<slug>`.
 - **Live** (`/#live`): upcoming and past performances, split automatically by date.
-- **Sound** (`/#sound`): a small Web Audio instrument whose oscilloscope draws what you hear. Drag on the scope to play it.
+- **Sound** (`/#sound`): a track player with a real waveform (shown once `tracks.ts` has entries) and a small Web Audio instrument whose oscilloscope draws what you hear. Drag on the scope to play it. Once a track starts, a mini player stays pinned to the bottom of every page, so the music keeps going while you browse.
+- **Audio-reactive visuals**: whatever is playing (a track, the instrument, or the room through the `[ ] mic` toggle on the portrait) drives the visuals. The portrait swells with the bass, brightens with the mids and tears and glitches with the highs; the wordmark's red/blue split widens and the background video brightens and shifts hue.
 - **About** and **Contact**.
 - **Video log**: links out to the separate video-log site.
 
@@ -28,6 +29,7 @@ All content is in `src/content/`. You don't need to touch page code to change it
 | `site.ts` | Name, tagline, about text, email, social links, media URLs and the portrait settings |
 | `works.ts` | Portfolio pieces. Add an object to publish a new piece. |
 | `shows.ts` | Performances, with dates. |
+| `tracks.ts` | Tracks for the player. Put audio files in `public/audio/` (or any host that sends CORS headers, such as Cloudinary) so the visuals can listen to them. |
 
 ### The portrait
 
@@ -55,7 +57,8 @@ npm run build
 src/app/layout.tsx          Root layout, metadata, nav and footer
 src/app/page.tsx            Home page: hero, work, live, sound, about, contact
 src/app/work/[slug]/        One page per work
-src/components/             Nav, Footer, WorkCard, AsciiPortrait, SignalInstrument
+src/components/             Nav, Footer, WorkCard, AsciiPortrait, SignalInstrument, PlayerProvider, MusicPlayer, MiniPlayer
+src/lib/audio.ts            Shared audio engine: one AudioContext and analyser, levels exposed to JS and as CSS variables
 src/content/                Site content (see above)
 ```
 
