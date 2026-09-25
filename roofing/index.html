@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Batten &amp; Ridge Roofing</title>
+<meta name="description" content="Roof repairs, re-roofing, restorations and gutters across Sydney's north and west.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground: #EEECE4;
+  --surface: #F7F6F1;
+  --ink: #26272A;
+  --muted: #5B5D57;
+  --line: #D6D3C7;
+  --accent: #E6A417;
+  --accent-ink: #1E1A10;
+  --band: #2E2F31;
+  --band-ink: #EEECE4;
+  --roof: #323233;
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #1C1D1F; --surface: #242528; --ink: #ECEAE2; --muted: #A9AAA3;
+    --line: #3A3B3E; --band: #111213; --band-ink: #ECEAE2; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #1C1D1F; --surface: #242528; --ink: #ECEAE2; --muted: #A9AAA3;
+  --line: #3A3B3E; --band: #111213; --band-ink: #ECEAE2; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font: 400 17px/1.6 var(--body);
+}
+img, svg { max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: 0.005em; }
+h1 { font-size: clamp(46px, 7.4vw, 88px); text-transform: uppercase; }
+h2 { font-size: clamp(34px, 4.6vw, 52px); text-transform: uppercase; }
+h3 { font-size: 26px; text-transform: uppercase; }
+p { margin: 0; }
+.label { font: 600 13px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px;
+  border-radius: 3px; border: 2px solid var(--ink); background: transparent; color: var(--ink);
+  font: 600 16px/1 var(--body); text-decoration: none; cursor: pointer;
+  transition: background .15s, color .15s, transform .15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { background: #F0B530; }
+
+/* Header */
+header.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: color-mix(in srgb, var(--ground) 92%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand b { font: 700 24px/1 var(--display); text-transform: uppercase; letter-spacing: 0.02em; }
+.brand svg { width: 34px; height: 24px; }
+.top nav { display: flex; align-items: center; gap: 28px; }
+.top nav a:not(.btn) { text-decoration: none; font-weight: 500; color: var(--muted); }
+.top nav a:not(.btn):hover { color: var(--ink); }
+.top .btn { min-height: 44px; padding: 0 18px; font-size: 15px; }
+@media (max-width: 760px) { .top nav a:not(.btn) { display: none; } }
+@media (max-width: 420px) { .brand b { font-size: 20px; white-space: nowrap; } .brand svg { width: 26px; } }
+
+/* Hero */
+.hero { padding-block: clamp(48px, 8vw, 96px) clamp(40px, 6vw, 72px); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 19px; color: var(--muted); max-width: 34ch; margin-top: 24px; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.phone { font: 700 22px/1 var(--display); letter-spacing: 0.03em; }
+.facts { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.facts div { display: grid; gap: 4px; }
+.facts strong { font: 700 28px/1 var(--display); font-variant-numeric: tabular-nums; }
+.facts span { font-size: 14px; color: var(--muted); }
+
+.house { display: grid; gap: 18px; }
+.house svg { width: 100%; height: auto; display: block; }
+.roof-fill { fill: var(--roof); transition: fill .35s; }
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.swatches .label { margin-right: 6px; }
+.sw {
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--line); cursor: pointer; padding: 0;
+  background: var(--c);
+}
+.sw[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--ground), 0 0 0 4px var(--accent); }
+.sw-name { font-size: 14px; color: var(--muted); min-width: 9ch; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .house { order: -1; max-width: 520px; }
+}
+
+/* Sections */
+section.block { padding-block: clamp(64px, 9vw, 112px); }
+.head { display: grid; gap: 14px; max-width: 620px; margin-bottom: 48px; }
+.head p { color: var(--muted); }
+
+.services { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 2px solid var(--ink); }
+.svc { padding: 32px 32px 36px 0; border-bottom: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
+.svc:nth-child(even) { padding: 32px 0 36px 32px; border-left: 1px solid var(--line); }
+.svc p { color: var(--muted); max-width: 44ch; }
+.svc .meta { font-size: 14px; font-weight: 600; color: var(--ink); }
+@media (max-width: 700px) {
+  .services { grid-template-columns: 1fr; }
+  .svc, .svc:nth-child(even) { padding: 28px 0; border-left: 0; }
+}
+
+/* Process band */
+.band { background: var(--band); color: var(--band-ink); }
+.band .label, .band .head p { color: color-mix(in srgb, var(--band-ink) 65%, transparent); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; gap: 12px; align-content: start; }
+.steps li::before {
+  content: "Step " counter(s); font: 600 13px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); padding-bottom: 14px; border-bottom: 1px solid color-mix(in srgb, var(--band-ink) 25%, transparent);
+}
+.steps p { color: color-mix(in srgb, var(--band-ink) 72%, transparent); }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; gap: 32px; } }
+
+.quote-mark { display: grid; gap: 20px; max-width: 760px; margin: 72px 0 0; padding-top: 48px; border-top: 1px solid color-mix(in srgb, var(--band-ink) 25%, transparent); }
+.quote-mark blockquote { margin: 0; font: 600 clamp(26px, 3.2vw, 36px)/1.2 var(--display); text-wrap: balance; }
+.quote-mark cite { font-style: normal; color: color-mix(in srgb, var(--band-ink) 65%, transparent); font-size: 15px; }
+
+/* Quote form */
+.contact .wrap { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
+.contact .aside { display: grid; gap: 28px; }
+.contact dl { margin: 0; display: grid; gap: 20px; }
+.contact dt { margin-bottom: 6px; }
+.contact dd { margin: 0; }
+form { background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: clamp(24px, 4vw, 40px); display: grid; gap: 18px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+.field { display: grid; gap: 8px; }
+.field label { font-size: 14px; font-weight: 600; }
+input, select, textarea {
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--ground);
+  border: 1px solid var(--line); border-radius: 3px; padding: 12px 14px; width: 100%;
+}
+textarea { min-height: 110px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+.form-note { font-size: 14px; color: var(--muted); }
+.sent { padding: 14px 16px; border-radius: 3px; background: color-mix(in srgb, var(--accent) 22%, var(--surface)); font-weight: 500; }
+@media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } }
+
+footer { border-top: 1px solid var(--line); padding-block: 32px; font-size: 14px; color: var(--muted); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Batten and Ridge Roofing, home">
+      <svg viewBox="0 0 34 24" aria-hidden="true"><path d="M2 20 L17 4 L32 20" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linejoin="miter"/></svg>
+      <b>Batten &amp; Ridge</b>
+    </a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#quote" class="btn primary">Free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="label">Sydney roofers &middot; North Shore to the Hills</p>
+        <h1 style="margin-top:18px">Roofs fixed properly. <span>First time.</span></h1>
+        <p class="lede">Leaks, re-roofs, restorations and gutters. A licensed roofer inspects, you get a written quote, and the job is done by our own crew.</p>
+        <div class="actions">
+          <a href="#quote" class="btn primary">Book a free inspection</a>
+          <a href="#services" class="btn">See services</a>
+        </div>
+        <div class="facts">
+          <div><strong>10 yrs</strong><span>workmanship warranty</span></div>
+          <div><strong>48 hrs</strong><span>to a written quote</span></div>
+          <div><strong>4.9 / 5</strong><span>from 310 reviews</span></div>
+        </div>
+      </div>
+
+      <div class="house">
+        <svg viewBox="0 0 520 340" role="img" aria-label="A house with a corrugated steel roof in the selected colour">
+          <defs>
+            <clipPath id="roofClip"><path d="M40 170 L260 40 L480 170 Z"/></clipPath>
+            <pattern id="ribs" width="16" height="10" patternUnits="userSpaceOnUse" patternTransform="skewX(0)">
+              <rect width="16" height="10" fill="#000" opacity="0"/>
+              <rect x="0" width="2" height="10" fill="#fff" opacity=".16"/>
+              <rect x="8" width="1" height="10" fill="#000" opacity=".18"/>
+            </pattern>
+          </defs>
+          <!-- walls -->
+          <rect x="78" y="168" width="364" height="150" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+          <rect x="230" y="222" width="60" height="96" fill="var(--line)"/>
+          <rect x="116" y="206" width="76" height="56" fill="var(--ground)" stroke="var(--line)" stroke-width="2"/>
+          <rect x="328" y="206" width="76" height="56" fill="var(--ground)" stroke="var(--line)" stroke-width="2"/>
+          <!-- roof -->
+          <g clip-path="url(#roofClip)">
+            <rect class="roof-fill" x="0" y="0" width="520" height="200"/>
+            <rect x="0" y="0" width="520" height="200" fill="url(#ribs)"/>
+          </g>
+          <!-- gutter & ridge -->
+          <rect class="roof-fill" x="30" y="166" width="460" height="10" rx="2"/>
+          <rect x="30" y="166" width="460" height="10" rx="2" fill="#000" opacity=".25"/>
+          <path d="M252 44 L260 38 L268 44" fill="none" stroke="var(--accent)" stroke-width="5"/>
+          <line x1="20" y1="318" x2="500" y2="318" stroke="var(--ink)" stroke-width="2"/>
+        </svg>
+        <div class="swatches" role="group" aria-label="Preview a steel roof colour">
+          <span class="label">Try a colour</span>
+          <button class="sw" style="--c:#323233" data-name="Monument" aria-pressed="true" aria-label="Monument"></button>
+          <button class="sw" style="--c:#4D4F48" data-name="Woodland Grey" aria-pressed="false" aria-label="Woodland Grey"></button>
+          <button class="sw" style="--c:#6D6C6E" data-name="Basalt" aria-pressed="false" aria-label="Basalt"></button>
+          <button class="sw" style="--c:#BDBFBA" data-name="Shale Grey" aria-pressed="false" aria-label="Shale Grey"></button>
+          <button class="sw" style="--c:#E4E2D5" data-name="Surfmist" aria-pressed="false" aria-label="Surfmist"></button>
+          <button class="sw" style="--c:#364152" data-name="Deep Ocean" aria-pressed="false" aria-label="Deep Ocean"></button>
+          <button class="sw" style="--c:#5E1D0E" data-name="Manor Red" aria-pressed="false" aria-label="Manor Red"></button>
+          <span class="sw-name" id="swName" aria-live="polite">Monument</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="services" style="padding-top:clamp(32px,5vw,64px)">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">Services</p>
+        <h2>Four things, done well</h2>
+        <p>We keep the list short on purpose. If your roof needs something else, ask and we'll tell you straight whether we're the right people.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <h3>Leaks &amp; repairs</h3>
+          <p>Cracked tiles, rusted sheets, failed flashings and valley irons. We find the source, not just the wet patch on the ceiling.</p>
+          <span class="meta">Most repairs done in one visit</span>
+        </article>
+        <article class="svc">
+          <h3>Re-roofing</h3>
+          <p>Tile or old iron replaced with new steel sheeting, sarking and insulation blanket. Pitches from 5&deg; up.</p>
+          <span class="meta">Typical house: 3&ndash;5 days</span>
+        </article>
+        <article class="svc">
+          <h3>Tile restoration</h3>
+          <p>Pressure clean, re-bed and re-point ridge capping, replace broken tiles, then two coats of membrane.</p>
+          <span class="meta">Adds 15+ years to a sound tile roof</span>
+        </article>
+        <article class="svc">
+          <h3>Gutters &amp; downpipes</h3>
+          <p>Quad, half-round and box gutters replaced or repaired, plus leaf guard fitted to suit bushland blocks.</p>
+          <span class="meta">Matched to your roof colour</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block band" id="process">
+    <div class="wrap">
+      <div class="head">
+        <p class="label">How it works</p>
+        <h2>No surprises on the invoice</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>We inspect</h3>
+          <p>A licensed roofer gets up on the roof, not a salesperson with a clipboard. You get photos of what we find.</p>
+        </li>
+        <li>
+          <h3>You get a fixed quote</h3>
+          <p>Written, itemised and fixed price, in your inbox within 48 hours. No deposit for jobs under $5,000.</p>
+        </li>
+        <li>
+          <h3>We do the job</h3>
+          <p>Our own crew, no subbies. The site is cleaned daily, and the warranty certificate arrives with the final invoice.</p>
+        </li>
+      </ol>
+      <figure class="quote-mark">
+        <blockquote>&ldquo;Two other companies wanted to replace the whole roof. They found one cracked valley, fixed it in an afternoon, and it's been dry through every storm since.&rdquo;</blockquote>
+        <cite>Example review &middot; homeowner in Castle Hill</cite>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block contact" id="quote">
+    <div class="wrap">
+      <div class="aside">
+        <div class="head" style="margin-bottom:0">
+          <p class="label">Free quote</p>
+          <h2>Tell us about your roof</h2>
+          <p>We reply the same business day. For an active leak, call and we'll send someone out.</p>
+        </div>
+        <dl>
+          <div><dt class="label">Phone</dt><dd class="phone">1300 000 000</dd></div>
+          <div><dt class="label">Hours</dt><dd>Mon&ndash;Fri 7am&ndash;5pm, Sat 8am&ndash;12pm</dd></div>
+          <div><dt class="label">Service areas</dt><dd>North Shore, Northern Beaches, Hills District, Parramatta and the Inner West</dd></div>
+        </dl>
+      </div>
+
+      <form id="quoteForm" novalidate>
+        <div class="row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="phoneIn">Phone</label><input id="phoneIn" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="suburb">Suburb</label><input id="suburb" name="suburb" autocomplete="address-level2" required></div>
+          <div class="field">
+            <label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option>Leak or repair</option>
+              <option>Re-roof</option>
+              <option>Tile restoration</option>
+              <option>Gutters &amp; downpipes</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="details">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="details" name="details" placeholder="e.g. Water coming through the ceiling in the back bedroom after heavy rain"></textarea></div>
+        <button class="btn primary" type="submit" style="justify-self:start">Request my free quote</button>
+        <p class="form-note" id="formNote">Demo form: nothing is sent yet. Connect it to your email or CRM before going live.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Batten &amp; Ridge Roofing &middot; Lic. 000000C</span>
+    <span>Fully insured &middot; ABN 00 000 000 000</span>
+  </div>
+</footer>
+
+<script>
+  const swatches = document.querySelectorAll('.sw');
+  const swName = document.getElementById('swName');
+  swatches.forEach(btn => btn.addEventListener('click', () => {
+    swatches.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+    document.documentElement.style.setProperty('--roof', btn.style.getPropertyValue('--c'));
+    swName.textContent = btn.dataset.name;
+  }));
+
+  const form = document.getElementById('quoteForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const missing = [...form.querySelectorAll('[required]')].filter(i => !i.value.trim());
+    if (missing.length) {
+      note.className = 'form-note';
+      note.textContent = 'Please fill in your ' + missing.map(i => form.querySelector('label[for="' + i.id + '"]').textContent.toLowerCase()).join(', ') + '.';
+      missing[0].focus();
+      return;
+    }
+    note.className = 'sent';
+    note.textContent = 'Thanks, ' + form.elements.name.value.trim().split(' ')[0] + '. This is a demo, so nothing was sent. Once the form is connected, requests will go straight to your inbox.';
+  });
+</script>
+</body>
+</html>
